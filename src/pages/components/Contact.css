@@ -1,0 +1,31 @@
+.main-contact-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--bs);
+  letter-spacing: 5px;
+}
+
+.contact-header-div {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+  padding: 20px;
+  background: var(--clr-dark);
+}
+
+.contact-div {
+  padding: 10px;
+  font-weight: var(--fw-bold);
+  background: var(--clr-medium);
+}
+
+.main-contact-div a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+.main-contact-div a:hover {
+  color: var(--clr-accent);
+}

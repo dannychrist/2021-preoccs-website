@@ -1,0 +1,14 @@
+.main-video-div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 60px 0 5px 0;
+  flex-wrap: wrap
+}
+
+@media (min-width: 768px) {
+  .main-video-div {
+    flex-direction: row;
+  }
+}

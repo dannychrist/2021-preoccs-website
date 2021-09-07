@@ -1,0 +1,16 @@
+.main-div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 60px 0 2px 0;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .main-div {
+    flex-direction: row;
+  }
+}
+
+

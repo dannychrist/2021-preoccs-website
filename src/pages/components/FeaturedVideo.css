@@ -1,0 +1,26 @@
+.featured-video-div {
+  letter-spacing: 5px;
+}
+
+.featured-video-header-div {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+  padding: 20px;
+  background: var(--clr-dark);
+  text-align: center;
+}
+
+.featured-video {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.f-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}

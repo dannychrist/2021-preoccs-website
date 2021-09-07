@@ -1,0 +1,138 @@
+.newsletter-div {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.newsletter-header-div {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+  padding: 20px;
+  background: var(--clr-dark);
+  width: 100%;
+  letter-spacing: 5px;
+}
+
+.newsletter-header {
+  color: var(--clr-dark);
+  background: var(--clr-medium);
+  padding: 10px;
+  margin: 30px;
+  font-style: italic;
+  border-radius: 10px;
+  box-shadow: var(--bs);
+  letter-spacing: 2.5px;
+}
+
+.newsletter-subheader {
+  background: var(--clr-medium);
+  margin-bottom: 4vh;
+  padding: 10px;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--bs);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 300px;
+  background: var(--clr-accent);
+  margin-bottom: 11vh;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input,
+.form-button {
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  border: 0;
+}
+
+.form-input {
+  padding: 2em;
+  color:var(--clr-dark);
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-input::placeholder {
+  opacity: 0.35;
+}
+
+.form-input:focus::placeholder {
+  color: var(--clr-medium);
+  opacity: 0.85;
+}
+
+.form-item:first-of-type {
+  position: relative;
+}
+
+.form-item:first-of-type::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--clr-dark);
+}
+
+.form-button {
+  background: var(--clr-dark);
+  color: var(--clr-accent);
+  padding: 1.25em 2.25em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 150ms;
+}
+
+.form-button:hover {
+  background: var(--clr-medium);
+  color: var(--clr-dark);
+}
+
+@media only screen and (min-width: 550px) {
+  .form {
+    flex-direction: row;
+    max-width: 450px;
+    border: 8px solid var(--clr-accent);
+    border-radius: 3em;
+  }
+
+  .form-button {
+    border-radius: 3em;
+    margin-left: auto;
+  }
+
+  .form-item {
+    justify-content: center;
+  }
+
+  .form-item:last-of-type {
+    flex-grow: 1;
+  }
+
+  .form-item:first-of-type::after {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: initial;
+    width: 1px;
+    height: initial;
+  }
+}

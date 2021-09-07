@@ -1,0 +1,45 @@
+.notification {
+  display: grid;
+  border-radius: 20px;
+  grid-gap: 10px;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  grid-template-columns: 1fr 5fr;
+  position: relative;
+  transition: 0.35s;
+  transform: translateY(100%);
+}
+
+.notification.visible {
+  transform: translateY(0);
+}
+
+.notification.success {
+  background-color: #66FF99;
+}
+
+.notification.warning {
+  background-color: #FFA500;
+}
+
+.notification.danger {
+  background-color: #f70d1a;
+}
+
+.notification img {
+  justify-self: center;
+  align-self: center;
+  width: 80px;
+}
+
+.notification p {
+  color: var(--clr-dark);
+  font-weight: 500;
+  align-self: center;
+  padding-right: 10px;
+}
+
+.notification:hover {
+  border-color: var(--clr-dark);
+}
+

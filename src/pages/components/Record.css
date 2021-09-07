@@ -1,0 +1,68 @@
+.record-button {
+  background: none !important;
+  border: 0;
+  padding: 0 !important;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+.record-image {
+  display: block;
+  width: 100%;
+}
+
+.record-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@media (min-width: 500px) {
+  .record-image-overlay--blur {
+    backdrop-filter: blur(5px);
+  }
+
+  .record-image-overlay--primary {
+    background: black;
+  }
+
+  .record-image-overlay > * {
+    transform: translateY(20px);
+    transition: transform 200ms;
+  }
+
+  .record-image-overlay:hover {
+    opacity: 1;
+  }
+
+  .record-image-overlay:hover > * {
+    transform: translateY(0);
+  }
+
+  .record-image-title {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+  }
+}
+
+.songs-ol {
+  padding-left: 6vw;
+  line-height: 1em;
+}
+
+.songs-li {
+  margin-bottom: 0.5em;
+}

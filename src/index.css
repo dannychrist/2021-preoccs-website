@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: 'Poppins', sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #99bbff;
+  --clr-medium: #c76744;
+  --clr-dark: #000000;
+  --clr-accent: #fffafa;
+
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.25rem;
+  --fs-h4: 1rem;
+  --fs-body: 0.8rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.3rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+@media (min-width: 500px) {
+  :root {
+    --fs-h1: 3rem;
+    --fs-h2: 2.75rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.25rem;
+    --fs-body: 1rem;
+  }
+}
+
+/* General styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-image: url('./assets/records/collage.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background: var(--clr-dark);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  z-index: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+/* Buttons */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid var(--clr-dark);
+  text-decoration: none;
+  transition: 200ms;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: var(--bs);
+}
+
+.btn:hover {
+  background: var(--clr-dark);
+  color: var(--clr-accent);
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+  margin: 0;
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 2em;
+}
+
+ul,
+ol {
+  line-height: 2em;
+}
+
+li {
+  padding-left: 10px;
+  margin-bottom: 1em;
+}
+
+/* Transform effects */
+
+.slide-in-left-enter {
+  transform: translateX(-100%);
+}
+
+.slide-in-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.slide-in-left-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-in-left-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+}
