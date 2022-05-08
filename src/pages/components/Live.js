@@ -13,7 +13,7 @@ const Live = () => {
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(
-        `https://api.songkick.com/api/3.0/artists/8777299/calendar.json?apikey=cgztuI5H7nSU0Sy8`
+        `https://api.songkick.com/api/3.0/artists/8777299/calendar.json?apikey=${process.env.REACT_APP_SONG_KICK}`
       );
       setItems(result.data.resultsPage.results.event);
       setIsLoading(false);
@@ -23,7 +23,12 @@ const Live = () => {
 
   return (
     <div className='live-div'>
-      <Shows isLoading={isLoading} items={items} />
+      {/* <Shows isLoading={isLoading} items={items} /> */}
+      <div
+        id='seated-55fdf2c0'
+        data-artist-id='0fc46ade-871c-4157-b582-67efd4f0808d'
+        data-css-version='2'
+      ></div>
     </div>
   );
 };

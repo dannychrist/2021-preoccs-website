@@ -58,7 +58,7 @@ body {
   /* background-image: url('./assets/records/collage.jpeg');
   background-size: cover;
   background-repeat: no-repeat; */
-  background: var(--clr-dark);
+  /* background: var(--clr-dark); */
   color: var(--clr-dark);
   margin: 0;
   font-family: var(--ff-secondary);
