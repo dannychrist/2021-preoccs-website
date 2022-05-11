@@ -6,6 +6,8 @@ import Contact from './Contact';
 import FeaturedVideo from './FeaturedVideo';
 
 // Covers
+import ArrangementsWhite from '../../assets/records/arrangements-white.jpg';
+import ArrangementsBlack from '../../assets/records/arrangements-black.jpg';
 import NewMaterial from '../../assets/records/new-material.jpg';
 import SelfTitled from '../../assets/records/self-titled.jpg';
 import VietCong from '../../assets/records/viet-cong.jpg';
@@ -17,6 +19,8 @@ import './Home.css';
 
 const Home = () => {
   const images = [
+    ArrangementsWhite,
+    ArrangementsBlack,
     NewMaterial,
     SelfTitled,
     VietCong,
