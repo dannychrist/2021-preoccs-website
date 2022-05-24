@@ -19,8 +19,8 @@ import './Home.css';
 
 const Home = () => {
   const images = [
-    ArrangementsWhite,
-    ArrangementsBlack,
+    // ArrangementsWhite,
+    // ArrangementsBlack,
     NewMaterial,
     SelfTitled,
     VietCong,
