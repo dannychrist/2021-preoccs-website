@@ -6,11 +6,13 @@
   justify-content: space-evenly;
   margin-right: 1rem;
   cursor: pointer;
+  z-index: 999;
 }
 
 #dropdown-icon {
   color: var(--clr-accent);
   font-size: 2em;
+  
 }
 
 #shop-icon {

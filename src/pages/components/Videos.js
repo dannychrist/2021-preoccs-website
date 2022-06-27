@@ -5,6 +5,7 @@ import Video from './Video';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 
 // Screenshots
+import Ricochet from '../../assets/records/arrangements-white.jpg';
 import CanelaParty from '../../assets/video-screenshots/canelaparty.png';
 import Disarray from '../../assets/video-screenshots/disarray.png';
 import Antidote from '../../assets/video-screenshots/antidote.png';
@@ -19,6 +20,12 @@ import './Videos.css';
 
 const Videos = () => {
   const musicvideos = [
+    {
+      id: '000',
+      title: 'Ricochet',
+      link: 'https://www.youtube.com/embed/v1hJz7xjFTY',
+      screenshot: Ricochet
+    },
     {
       id: '001',
       title: 'March of Progress, Canela Party',

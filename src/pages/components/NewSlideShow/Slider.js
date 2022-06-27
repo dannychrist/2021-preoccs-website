@@ -120,10 +120,10 @@ const Slider = (props) => {
         ))}
       </SliderContent>
 
-      <Arrow direction='left' handleClick={prevSlide} />
-      <Arrow direction='right' handleClick={nextSlide} />
+      {/* <Arrow direction='left' handleClick={prevSlide} />
+      <Arrow direction='right' handleClick={nextSlide} /> */}
 
-      <Dots slides={slides} activeSlide={activeSlide} />
+      {/* <Dots slides={slides} activeSlide={activeSlide} /> */}
     </Wrapper>
   );
 };

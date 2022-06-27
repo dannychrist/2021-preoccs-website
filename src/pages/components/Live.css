@@ -1,6 +1,24 @@
 .live-div {
-height: 100vh;
+/* height: 100vh; */
 display: flex;
-align-items: center;
+/* align-items: center; */
 justify-content: center;
+margin-top: 10vh;
+}
+
+.live-header {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+  padding-top: 70px;
+  background: var(--clr-dark);
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.seated-event-description-cells {
+  color: white;
+}
+
+.seated-follow-text {
+  color: white;
 }

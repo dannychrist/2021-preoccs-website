@@ -21,9 +21,9 @@ const FeaturedVideo = (props) => {
       <div className='featured-video'>
         <iframe
           className='f-vid'
-          src='https://www.youtube.com/embed/B2vaIO5WOsQ'
-          title='canela-party'
-          alt='canela-party'
+          src='https://www.youtube.com/embed/v1hJz7xjFTY'
+          title='featured-video'
+          alt='featured-video'
           frameborder='0'
           allowFullScreen='true'
           webkitallowfullscreen='true'

@@ -63,7 +63,7 @@
   left: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .nav-links ul {
     margin-top: 40px;
   }

@@ -36,9 +36,9 @@ const App = () => {
             <Route path='/' exact>
               <Home />
             </Route>
-            <Route path='/music'>
+            {/* <Route path='/music'>
               <Music />
-            </Route>
+            </Route> */}
             <Route path='/video'>
               <Videos />
             </Route>

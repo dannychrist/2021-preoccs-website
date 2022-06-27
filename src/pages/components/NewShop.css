@@ -1,0 +1,12 @@
+.new-shop-div {
+
+}
+
+.new-shop-header-div {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+  padding: 20px;
+  background: var(--clr-dark);
+  text-align: center;
+  letter-spacing: 5px;
+}

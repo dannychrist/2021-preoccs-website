@@ -11,9 +11,9 @@ const NavLinks = (props) => {
           HOME
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink to='/music'>MUSIC</NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink to='/video'>VIDEO</NavLink>
       </li>
@@ -21,7 +21,7 @@ const NavLinks = (props) => {
         <NavLink to='/live'>LIVE</NavLink>
       </li>
       <li>
-        <a href='https://www.hellomerch.com/collections/preoccupations'>SHOP</a>
+        <a href='https://ffm.to/arrangements'>SHOP</a>
       </li>
       <li>
         <a href='https://preoccupations.us17.list-manage.com/subscribe?u=111ab42f11672c8db4328f3e7&id=6d6483a833'>
