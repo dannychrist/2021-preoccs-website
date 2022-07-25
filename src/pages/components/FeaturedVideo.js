@@ -21,7 +21,8 @@ const FeaturedVideo = (props) => {
       <div className='featured-video'>
         <iframe
           className='f-vid'
-          src='https://www.youtube.com/embed/v1hJz7xjFTY'
+          // src='https://www.youtube.com/embed/v1hJz7xjFTY'
+          src='https://www.youtube.com/embed/yi6jdCx56AA'
           title='featured-video'
           alt='featured-video'
           frameborder='0'

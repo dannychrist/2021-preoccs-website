@@ -21,7 +21,7 @@ const Video = ({ title, link, screenshot, onLoad }) => {
         <iframe
           title={title}
           src={link}
-          alt={title}
+          alt={`${title} video image`}
           style={{ width: '100%', height: '100%' }}
           frameborder='0'
           allowFullScreen='true'
