@@ -40,7 +40,7 @@ const Home = () => {
       <PreOrder />
       <div className='pre-save-wrapper'>
         <PreSave />
-        <PreSaveSingle />
+        {/* <PreSaveSingle /> */}
       </div>
       <FeaturedVideo />
       <Live />
