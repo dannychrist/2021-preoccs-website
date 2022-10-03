@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+// import axios from 'axios';
 
 // Components
-import Shows from './Shows';
+// import Shows from './Shows';
 
 import './Live.css';
 
 const Live = () => {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [items, setItems] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://api.songkick.com/api/3.0/artists/8777299/calendar.json?apikey=${process.env.REACT_APP_SONG_KICK}`
-      );
-      setItems(result.data.resultsPage.results.event);
-      setIsLoading(false);
-    };
-    fetchItems();
-  }, []);
+  // useEffect(() => {
+  //   const fetchItems = async () => {
+  //     const result = await axios(
+  //       `https://api.songkick.com/api/3.0/artists/8777299/calendar.json?apikey=${process.env.REACT_APP_SONG_KICK}`
+  //     );
+  //     setItems(result.data.resultsPage.results.event);
+  //     setIsLoading(false);
+  //   };
+  //   fetchItems();
+  // }, []);
 
   return (
     <>
