@@ -41,8 +41,8 @@ const Home = () => {
       <Slider slides={images} />
       <PreOrder />
       <div className='pre-save-wrapper'>
-        <PreSave />
-        {/* <PreSaveSingle /> */}
+        {/* <PreSave /> */}
+        <PreSaveSingle />
       </div>
       <FeaturedVideo />
       <Live />
