@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 // import axios from 'axios';
 
 // Components
@@ -7,26 +8,21 @@ import React from 'react';
 import './Live.css';
 
 const Live = () => {
-  // const [items, setItems] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     const result = await axios(
-  //       `https://api.songkick.com/api/3.0/artists/8777299/calendar.json?apikey=${process.env.REACT_APP_SONG_KICK}`
-  //     );
-  //     setItems(result.data.resultsPage.results.event);
-  //     setIsLoading(false);
-  //   };
-  //   fetchItems();
-  // }, []);
+  const isLive = location.pathname === '/live';
 
   return (
     <>
       <div className='live-header'>
         <h2>UPCOMING TOURS</h2>
       </div>
-      <div className='live-div'>
+      <div
+        style={{
+          minHeight: isLive ? '60vh' : 'auto',
+        }}
+        className='live-div'
+      >
         {/* <Shows isLoading={isLoading} items={items} /> */}
 
         <div
