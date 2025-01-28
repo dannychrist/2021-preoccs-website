@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import Video from './Video';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 
-// Screenshots
+// Screenshotsill
+import Focus from '../../assets/video-screenshots/focus.png';
 import Slowly from '../../assets/video-screenshots/slowly.png';
-import DeathOfMelody from '../../assets/video-screenshots/deathofmelody.png'
+import DeathOfMelody from '../../assets/video-screenshots/deathofmelody.png';
 import Ricochet from '../../assets/records/arrangements-white.jpg';
 import CanelaParty from '../../assets/video-screenshots/canelaparty.png';
 import Disarray from '../../assets/video-screenshots/disarray.png';
@@ -24,75 +25,81 @@ const Videos = () => {
   const musicvideos = [
     {
       id: '0000',
-      title: 'Slowly',
-      link: 'https://www.youtube.com/embed/7NuwX0RZ6Hw',
-      screenshot: Slowly
+      title: 'Focus',
+      link: 'https://www.youtube.com/embed/npLTTvKpxPU?si=CANALUDNfDihzBRD',
+      screenshot: Focus,
     },
     {
       id: '0001',
-      title: 'Death of Melody',
-      link: 'https://www.youtube.com/embed/yi6jdCx56AA',
-      screenshot: DeathOfMelody
+      title: 'Slowly',
+      link: 'https://www.youtube.com/embed/7NuwX0RZ6Hw',
+      screenshot: Slowly,
     },
     {
       id: '0002',
-      title: 'Ricochet',
-      link: 'https://www.youtube.com/embed/v1hJz7xjFTY',
-      screenshot: Ricochet
+      title: 'Death of Melody',
+      link: 'https://www.youtube.com/embed/yi6jdCx56AA',
+      screenshot: DeathOfMelody,
     },
     {
       id: '0003',
-      title: 'March of Progress, Canela Party',
-      link: 'https://www.youtube.com/embed/B2vaIO5WOsQ',
-      screenshot: CanelaParty
+      title: 'Ricochet',
+      link: 'https://www.youtube.com/embed/v1hJz7xjFTY',
+      screenshot: Ricochet,
     },
     {
       id: '0004',
-      title: 'Disarray',
-      link: 'https://www.youtube.com/embed/keq2JOyZ6KI',
-      screenshot: Disarray
+      title: 'March of Progress, Canela Party',
+      link: 'https://www.youtube.com/embed/B2vaIO5WOsQ',
+      screenshot: CanelaParty,
     },
     {
       id: '0005',
-      title: 'Antidote',
-      link: 'https://www.youtube.com/embed/qRc9XW7ofGY',
-      screenshot: Antidote
+      title: 'Disarray',
+      link: 'https://www.youtube.com/embed/keq2JOyZ6KI',
+      screenshot: Disarray,
     },
     {
       id: '0006',
-      title: 'Anxiety',
-      link: 'https://www.youtube.com/embed/csMbqrFT1dM',
-      screenshot: Anxiety
+      title: 'Antidote',
+      link: 'https://www.youtube.com/embed/qRc9XW7ofGY',
+      screenshot: Antidote,
     },
     {
       id: '0007',
-      title: 'Memory',
-      link: 'https://www.youtube.com/embed/pQdVnKpv1Sk',
-      screenshot: Memory
+      title: 'Anxiety',
+      link: 'https://www.youtube.com/embed/csMbqrFT1dM',
+      screenshot: Anxiety,
     },
     {
       id: '0008',
-      title: 'Degraded',
-      link: 'https://www.youtube.com/embed/vykhXVCSmz0',
-      screenshot: Degraded
+      title: 'Memory',
+      link: 'https://www.youtube.com/embed/pQdVnKpv1Sk',
+      screenshot: Memory,
     },
     {
       id: '0009',
-      title: 'Bunker Buster',
-      link: 'https://www.youtube.com/embed/ZOLIHJKCu8M',
-      screenshot: BunkerBuster
+      title: 'Degraded',
+      link: 'https://www.youtube.com/embed/vykhXVCSmz0',
+      screenshot: Degraded,
     },
     {
       id: '0010',
-      title: 'Continental Shelf',
-      link: 'https://www.youtube.com/embed/hdMz7BUtOvk',
-      screenshot: ContinentalShelf
+      title: 'Bunker Buster',
+      link: 'https://www.youtube.com/embed/ZOLIHJKCu8M',
+      screenshot: BunkerBuster,
     },
     {
       id: '0011',
+      title: 'Continental Shelf',
+      link: 'https://www.youtube.com/embed/hdMz7BUtOvk',
+      screenshot: ContinentalShelf,
+    },
+    {
+      id: '0012',
       title: 'Silhouettes',
       link: 'https://www.youtube.com/embed/zW1kP99mok4',
-      screenshot: Silhouettes
+      screenshot: Silhouettes,
     },
   ];
 

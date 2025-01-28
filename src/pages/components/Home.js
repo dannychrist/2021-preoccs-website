@@ -11,7 +11,8 @@ import PreOrder from './PreOrder';
 import NewShop from './NewShop';
 
 // Covers
-import ArrangementsWhite from '../../assets/records/arrangements-white.jpg';
+// import ArrangementsWhite from '../../assets/records/arrangements-white.jpg';
+import IllAtEase from '../../assets/records/ill-at-ease.png';
 // import ArrangementsBlack from '../../assets/records/arrangements-black.jpg';
 // import NewMaterial from '../../assets/records/new-material.jpg';
 // import SelfTitled from '../../assets/records/self-titled.jpg';
@@ -24,7 +25,8 @@ import './Home.css';
 
 const Home = () => {
   const images = [
-    ArrangementsWhite,
+    IllAtEase,
+    // ArrangementsWhite,
     // ArrangementsBlack,
     // NewMaterial,
     // SelfTitled,
