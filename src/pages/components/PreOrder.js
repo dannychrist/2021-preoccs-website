@@ -5,13 +5,11 @@ import React from 'react';
 import './PreOrder.css';
 
 const PreOrder = (props) => {
-
   return (
     <div className='featured-video-div'>
       <div className='featured-video-header-div'>
-        <h2>LISTEN / ORDER NOW</h2>
+        <h2>LISTEN / PRE-SAVE</h2>
       </div>
-      
     </div>
   );
 };
