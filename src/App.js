@@ -13,7 +13,7 @@ import MainNavigation from './shared/components/Navigation/MainNavigation';
 import Home from './pages/components/Home';
 import Live from './pages/components/Live';
 import Videos from './pages/components/Videos';
-import Music from './pages/components/Music';
+import Shop from './pages/components/Shop';
 import Footer from './shared/components/Navigation/Footer';
 
 function _ScrollToTop(props) {
@@ -36,14 +36,14 @@ const App = () => {
             <Route path='/' exact>
               <Home />
             </Route>
-            {/* <Route path='/music'>
-              <Music />
-            </Route> */}
             <Route path='/video'>
               <Videos />
             </Route>
             <Route path='/live'>
               <Live />
+            </Route>
+            <Route path='/shop'>
+              <Shop />
             </Route>
           </Switch>
 

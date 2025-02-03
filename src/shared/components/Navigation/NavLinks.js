@@ -11,9 +11,9 @@ const NavLinks = (props) => {
           HOME
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink to='/music'>MUSIC</NavLink>
-      </li> */}
+      </li>
       <li>
         <NavLink to='/video'>VIDEO</NavLink>
       </li>
