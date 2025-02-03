@@ -12,9 +12,6 @@ const NavLinks = (props) => {
         </NavLink>
       </li>
       <li>
-        <NavLink to='/music'>MUSIC</NavLink>
-      </li>
-      <li>
         <NavLink to='/video'>VIDEO</NavLink>
       </li>
       <li>
