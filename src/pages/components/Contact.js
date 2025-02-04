@@ -12,7 +12,7 @@ const Contact = () => {
         <h4>
           NA Booking:{' '}
           <a href='mailto: bettsmarshallk@gmail.com'>
-            <i class='fas fa-envelope'></i>
+            <i className='fas fa-envelope'></i>
           </a>
         </h4>
       </div>
@@ -20,7 +20,7 @@ const Contact = () => {
         <h4>
           Euro/UK Booking:{' '}
           <a href='mailto: Bas@belmontbookings.nl'>
-            <i class='fas fa-envelope'></i>
+            <i className='fas fa-envelope'></i>
           </a>
         </h4>
       </div>
@@ -28,7 +28,7 @@ const Contact = () => {
         <h4>
           Band Contact:{' '}
           <a href='Preoccupationsband@gmail.com'>
-            <i class='fas fa-envelope'></i>
+            <i className='fas fa-envelope'></i>
           </a>
         </h4>
       </div>
@@ -36,7 +36,7 @@ const Contact = () => {
         <h4>
           PR:{' '}
           <a href='mailto: Gracej@grandstandhq.com'>
-            <i class='fas fa-envelope'></i>
+            <i className='fas fa-envelope'></i>
           </a>
         </h4>
       </div>

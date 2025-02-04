@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
@@ -7,50 +7,118 @@ import Backdrop from './Backdrop';
 
 import './Modal.css';
 
-const ModalOverlay = (props) => {
+const ModalOverlay = ({ onCancel }) => {
+  const modalHook = document.getElementById('modal-hook');
+
+  if (!modalHook) {
+    console.error('Error: #modal-hook is missing in the DOM.');
+    return null;
+  }
+
   const content = (
-    <div className='modal' style={props.style}>
-      <header className={`modal__header ${props.headerClass}`}>
-        <h2>{props.header}</h2>
-        <div style={{ fontStyle: 'italic', paddingLeft: '7px' }}>
-          {props.subheader}
-        </div>
+    <div
+      className='modal'
+      role='dialog'
+      aria-labelledby='modal-title'
+      aria-describedby='modal-description'
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+    >
+      <header className='modal__header'>
+        <h2 id='modal-title'>PICK YOUR MERCH STORE</h2>
       </header>
-      <div>
-        <div className={`modal__content ${props.contentClass}`}>
-          {props.children}
-        </div>
-        <footer className={`modal__footer ${props.footerClass}`}>
-          <a href={props.link}>
-            <button
-              className='btn'
-              style={{
-                fontSize: '15px',
-                width: '100%',
-              }}
+
+      <div className='modal__content'>
+        <h3>NEW RECORDS / MERCH</h3>
+        <ul>
+          <li>
+            <a
+              href='https://bornlosersrecords.com'
+              target='_blank'
+              rel='noopener noreferrer'
             >
-              LISTEN/BUY
-            </button>
-          </a>
-        </footer>
+              BORN LOSERS RECORDS (WORLD)
+            </a>
+          </li>
+        </ul>
+
+        <h3>OLD RECORDS / MERCH</h3>
+        <ul>
+          <li>
+            <a
+              href='https://jagjaguwar.com/artist/preoccupations/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              JAGJAGUWAR (WORLD)
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://flemisheye.com/collections/preoccupations'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              FLEMISH EYE (CAN)
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://shop.bingomerch.com/collections/preoccupations?ffm=FFM_e8a8051460f238253706324e342fb9e0'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              BINGO MERCH (ARRANGEMENTS UK / EU)
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.hellomerch.com/collections/preoccupations'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              HELLO MERCH (ARRANGEMENTS US)
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <footer className='modal__footer'>
+        <button className='btn' onClick={onCancel}>
+          CLOSE
+        </button>
+      </footer>
     </div>
   );
-  return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
+
+  return ReactDOM.createPortal(content, modalHook);
 };
 
-const Modal = (props) => {
+const Modal = ({ show, onCancel }) => {
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        onCancel();
+      }
+    };
+
+    if (show) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [show, onCancel]);
+
   return (
     <>
-      {props.show && <Backdrop onClick={props.onCancel} />}
+      {show && <Backdrop onClick={onCancel} />}
       <CSSTransition
-        in={props.show}
+        in={show}
         mountOnEnter
         unmountOnExit
         timeout={200}
         classNames='modal'
       >
-        <ModalOverlay {...props} />
+        <ModalOverlay onCancel={onCancel} />
       </CSSTransition>
     </>
   );

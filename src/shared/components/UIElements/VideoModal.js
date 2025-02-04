@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
@@ -7,23 +7,47 @@ import Backdrop from './Backdrop';
 
 import './VideoModal.css';
 
-const VideoModalOverlay = (props) => {
-  const content = (
-    <div className='video-modal'>
-        <div className={'video-modal__content'}>
-          {props.children}
-        </div>
-    </div>
+const VideoModalOverlay = ({ children }) => {
+  const modalHook = document.getElementById('modal-hook');
+
+  if (!modalHook) {
+    console.error('Error: #modal-hook is missing in the DOM.');
+    return null;
+  }
+
+  return ReactDOM.createPortal(
+    <div
+      className='video-modal'
+      role='dialog'
+      aria-labelledby='video-modal-title'
+    >
+      <div className='video-modal__content'>{children}</div>
+    </div>,
+    modalHook
   );
-  return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
 };
 
-const VideoModal = (props) => {
+const VideoModal = ({ show, onCancel, ...props }) => {
+  // ✅ Destructure props at the top
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        onCancel();
+      }
+    };
+
+    if (show) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [show, onCancel]); // ✅ Now properly destructured
+
   return (
     <>
-      {props.show && <Backdrop onClick={props.onCancel} />}
+      {show && <Backdrop onClick={onCancel} />}
       <CSSTransition
-        in={props.show}
+        in={show}
         mountOnEnter
         unmountOnExit
         timeout={200}
@@ -36,4 +60,3 @@ const VideoModal = (props) => {
 };
 
 export default VideoModal;
-

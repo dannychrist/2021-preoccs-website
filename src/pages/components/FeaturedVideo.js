@@ -25,8 +25,8 @@ const FeaturedVideo = (props) => {
           src='https://www.youtube.com/embed/npLTTvKpxPU?si=CANALUDNfDihzBRD'
           title='featured-video'
           alt='featured-video'
-          frameborder='0'
-          allowFullScreen='true'
+          style={{ border: 'none' }}
+          allowFullScreen={true} // ✅ Correct, boolean
           webkitallowfullscreen='true'
           mozallowfullscreen='true'
           onLoad={onLoad}

@@ -7,35 +7,84 @@
   background: var(--clr-medium);
   box-shadow: var(--bs);
   border-radius: 8px;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
+/* Header */
 .modal__header {
   width: 100%;
-  padding: 0.5rem 0.5rem;
+  padding: 0.75rem;
   background: var(--clr-dark);
   color: var(--clr-accent);
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   text-align: center;
+  border-radius: 8px 8px 0 0;
 }
 
 .modal__header h2 {
-  margin: 0.5rem;
+  margin: 0;
+  font-size: 1.4rem;
 }
 
+/* Content */
 .modal__content {
-  padding-left: 1rem;
-  letter-spacing: .05em;
+  padding: 1rem;
+  letter-spacing: 0.05em;
   color: var(--clr-accent);
 }
 
+/* List styles for better readability */
+.modal__content ul {
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.modal__content li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Link styling */
+.modal__content a {
+  color: var(--clr-light);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.modal__content a:hover {
+  color: var(--clr-accent);
+  text-decoration: underline;
+}
+
+/* Footer */
 .modal__footer {
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   font-style: italic;
-  padding-left: 1rem;
+  text-align: center;
   border-top: 1px solid var(--clr-dark);
 }
 
+/* Button */
+.modal__footer .btn {
+  background: var(--clr-dark);
+  color: var(--clr-accent);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: 100%;
+}
+
+.modal__footer .btn:hover {
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+}
+
+/* Responsive Adjustments */
 @media (min-width: 600px) {
   .modal {
     left: calc(50% - 15rem);
@@ -43,6 +92,7 @@
   }
 }
 
+/* Modal Animations */
 .modal-enter {
   transform: translateY(-10rem);
   opacity: 0;
@@ -51,7 +101,7 @@
 .modal-enter-active {
   transform: translateY(0);
   opacity: 1;
-  transition: all 200ms;
+  transition: all 200ms ease-in-out;
 }
 
 .modal-exit {
@@ -62,6 +112,5 @@
 .modal-exit-active {
   transform: translateY(-10rem);
   opacity: 0;
-  transition: all 200ms;
+  transition: all 200ms ease-in-out;
 }
-

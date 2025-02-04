@@ -21,15 +21,18 @@ const Video = ({ title, link, screenshot, onLoad }) => {
         <iframe
           title={title}
           src={link}
-          alt={`${title} video image`}
-          style={{ width: '100%', height: '100%' }}
-          frameborder='0'
-          allowFullScreen='true'
-          webkitallowfullscreen='true'
-          mozallowfullscreen='true'
+          style={{ width: '100%', height: '100%', border: 'none' }}
+          allowFullScreen
+          ref={(iframe) => {
+            if (iframe) {
+              iframe.setAttribute('webkitallowfullscreen', 'true'); // ✅ Fix for Safari
+              iframe.setAttribute('mozallowfullscreen', 'true'); // ✅ Fix for Firefox
+            }
+          }}
           onLoad={onLoad}
         ></iframe>
       </VideoModal>
+
       <Grid
         item
         component={Card}
@@ -52,12 +55,7 @@ const Video = ({ title, link, screenshot, onLoad }) => {
         >
           <button
             className='video-button'
-            style={{ width: '100%' }}
-            src={link}
-            title={title}
-            frameBorder='0'
-            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
+            style={{ width: '100%', border: 'none' }}
             onClick={openModalHandler}
             onLoad={onLoad}
           >

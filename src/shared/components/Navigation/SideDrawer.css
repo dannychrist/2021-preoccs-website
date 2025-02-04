@@ -7,4 +7,16 @@
   width: 70%;
   background: var(--clr-dark);
   box-shadow: var(--br);
+
+  /* ✅ Use Flexbox to Center Content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ✅ Add More Space Between NavLinks ONLY in SideDrawer */
+.side-drawer .nav-links li {
+  margin: 20px 0; /* Increase vertical spacing */
 }

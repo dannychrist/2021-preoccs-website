@@ -27,7 +27,8 @@ const MainNavigation = (props) => {
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <nav className='main-navigation__drawer-nav'>
-          <NavLinks />
+          {/* ✅ Pass closeDrawerHandler to NavLinks */}
+          <NavLinks onClose={closeDrawerHandler} />
         </nav>
       </SideDrawer>
 
@@ -36,15 +37,11 @@ const MainNavigation = (props) => {
           className='main-navigation__menu-btn'
           onClick={openDrawerHandler}
         >
-          <i id='dropdown-icon' class='fas fa-bars'></i>
+          <i id='dropdown-icon' className='fas fa-bars'></i>
         </button>
         <h1 className='main-navigation__title'>
           <Link to='/'>
-            <img
-              src={Preoccs}
-              width={250}
-              alt='logo'
-            />
+            <img src={Preoccs} width={250} alt='logo' />
           </Link>
         </h1>
         <nav className='main-navigation__header-nav'>

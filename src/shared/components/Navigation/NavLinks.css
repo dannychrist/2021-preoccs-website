@@ -25,7 +25,9 @@
   text-align: center;
 }
 
-.nav-links a {
+/* ✅ Apply the same styles to both <a> and <button> */
+.nav-links a,
+.nav-links button {
   color: var(--clr-accent);
   text-transform: uppercase;
   text-decoration: none;
@@ -33,22 +35,33 @@
   display: inline-block;
   padding: 12px 15px;
   position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.nav-links a:active, a:focus {
+.nav-links a:active,
+.nav-links a:focus,
+.nav-links button:active,
+.nav-links button:focus {
   outline: 0;
   border: none;
   color: var(--clr-medium);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links button:hover {
   color: var(--clr-medium);
 }
 
-.nav-links a:after {
+/* ✅ Ensure both <a> and <button> get the underline effect */
+.nav-links a::after,
+.nav-links button::after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
-  content: "";
+  content: '';
   display: block;
   height: 3px;
   left: 50%;
@@ -58,8 +71,9 @@
   width: 0;
 }
 
-.nav-links a:hover:after {
-  width: 100%; 
+.nav-links a:hover::after,
+.nav-links button:hover::after {
+  width: 100%;
   left: 0;
 }
 

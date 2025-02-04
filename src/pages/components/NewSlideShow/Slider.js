@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 // Components
@@ -10,23 +10,27 @@ const Slider = ({ slides, autoPlay = 5 }) => {
   const [isFading, setIsFading] = useState(true);
   const intervalRef = useRef(null);
 
+  // ✅ Memoize transitionSlides to prevent re-creation on every render
+  const transitionSlides = useCallback(() => {
+    setIsFading(false);
+
+    setTimeout(() => {
+      setPrevSlide(currentSlide);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setIsFading(true);
+    }, 6000); // Matches fade-out duration
+  }, [currentSlide, slides.length]);
+
+  // ✅ Ensure interval runs properly with correct dependencies
   useEffect(() => {
+    clearInterval(intervalRef.current); // Clear previous interval before setting a new one
+
     intervalRef.current = setInterval(() => {
       transitionSlides();
     }, autoPlay * 1000 + 6000); // Ensuring smooth transitions
 
-    return () => clearInterval(intervalRef.current);
-  }, [currentSlide]);
-
-  const transitionSlides = () => {
-    setIsFading(false); // Start fade out
-
-    setTimeout(() => {
-      setPrevSlide(currentSlide); // Store previous slide
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-      setIsFading(true); // Start fade in
-    }, 6000); // Matches fade-out duration
-  };
+    return () => clearInterval(intervalRef.current); // Cleanup on unmount or dependency change
+  }, [autoPlay, transitionSlides]); // ✅ Correct dependencies
 
   return (
     <Wrapper>
