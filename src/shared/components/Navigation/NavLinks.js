@@ -1,24 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Modal from '../UIElements/Modal'; // Import Modal
 
 import './NavLinks.css';
 
-const NavLinks = ({ onClose }) => {
-  const [showShopModal, setShowShopModal] = useState(false);
-
-  const openShopModal = () => {
-    setShowShopModal(true);
-    if (onClose) {
-      onClose(); // ✅ Close SideDrawer when clicking "SHOP"
-    }
-  };
-
+const NavLinks = ({ onClose, openShopModal }) => {
   return (
     <>
-      {/* SHOP MODAL */}
-      <Modal show={showShopModal} onCancel={() => setShowShopModal(false)} />
-
       {/* NAVIGATION LINKS */}
       <ul className='nav-links'>
         <li>
@@ -37,6 +24,7 @@ const NavLinks = ({ onClose }) => {
           </NavLink>
         </li>
         <li>
+          {/* ✅ Open modal when clicking SHOP */}
           <button className='nav-link-btn' onClick={openShopModal}>
             SHOP
           </button>

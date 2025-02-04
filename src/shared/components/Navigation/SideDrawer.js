@@ -4,40 +4,27 @@ import { CSSTransition } from 'react-transition-group';
 
 import './SideDrawer.css';
 
-const SideDrawer = (props) => {
+const SideDrawer = ({ show, onExited, children }) => {
   const handleClickInside = (e) => {
-    e.stopPropagation(); // Prevents clicking inside from closing drawer
-  };
-
-  // Close the drawer when a link inside is clicked
-  const handleLinkClick = () => {
-    if (props.onClose) {
-      props.onClose();
-    }
+    e.stopPropagation(); // ✅ Prevents accidental closing
   };
 
   const content = (
     <CSSTransition
-      in={props.show}
+      in={show}
       timeout={200}
       classNames='slide-in-left'
       mountOnEnter
       unmountOnExit
+      onExited={onExited} // ✅ Ensure onExited is fired correctly
     >
       <aside className='side-drawer' onClick={handleClickInside}>
-        <nav onClick={handleLinkClick}>{props.children}</nav>
+        <nav>{children}</nav>
       </aside>
     </CSSTransition>
   );
 
-  // Ensure the portal target exists
-  const drawerHook = document.getElementById('drawer-hook');
-  if (!drawerHook) {
-    console.error('Error: #drawer-hook is missing in the DOM.');
-    return null;
-  }
-
-  return ReactDOM.createPortal(content, drawerHook);
+  return ReactDOM.createPortal(content, document.getElementById('drawer-hook'));
 };
 
 export default SideDrawer;
