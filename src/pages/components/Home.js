@@ -4,7 +4,7 @@ import React from 'react';
 import Slider from '../components/NewSlideShow/Slider';
 import Contact from './Contact';
 import FeaturedVideo from './FeaturedVideo';
-import PreSave from '../../components/PreSave';
+// import PreSave from '../../components/PreSave';
 import PreSaveSingle from '../../components/PreSaveSingle';
 import Live from './Live';
 import PreOrder from './PreOrder';

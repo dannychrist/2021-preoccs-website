@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-// import axios from 'axios';
-
-// Components
-// import Shows from './Shows';
-
 import './Live.css';
 
 const Live = () => {
   const location = useLocation();
-
   const isLive = location.pathname === '/live';
+
+  // Use useEffect to dynamically load the Seated widget script
+  useEffect(() => {
+    // Check if the script is already loaded to avoid duplicate loading
+    if (!document.getElementById('seated-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'seated-widget-script';
+      script.src = 'https://widget.seated.com/app.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      // Cleanup function to remove the script if the component unmounts
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <>
@@ -23,8 +34,7 @@ const Live = () => {
         }}
         className='live-div'
       >
-        {/* <Shows isLoading={isLoading} items={items} /> */}
-
+        {/* Seated widget container */}
         <div
           id='seated-55fdf2c0'
           data-artist-id='0fc46ade-871c-4157-b582-67efd4f0808d'
