@@ -16,7 +16,7 @@ const SideDrawer = ({ show, onExited, children }) => {
       classNames='slide-in-left'
       mountOnEnter
       unmountOnExit
-      onExited={onExited} // ✅ Ensure onExited is fired correctly
+      onExited={onExited} // ✅ Ensure onExited fires correctly
     >
       <aside className='side-drawer' onClick={handleClickInside}>
         <nav>{children}</nav>
@@ -24,7 +24,13 @@ const SideDrawer = ({ show, onExited, children }) => {
     </CSSTransition>
   );
 
-  return ReactDOM.createPortal(content, document.getElementById('drawer-hook'));
+  const portalTarget = document.getElementById('drawer-hook');
+  if (!portalTarget) {
+    console.error('Error: #drawer-hook is missing in the DOM.');
+    return null;
+  }
+
+  return ReactDOM.createPortal(content, portalTarget);
 };
 
 export default SideDrawer;

@@ -8,20 +8,20 @@ import Backdrop from './Backdrop';
 import './Modal.css';
 
 const ModalOverlay = ({ onCancel }) => {
+  // Ensure the portal target exists BEFORE rendering
   const modalHook = document.getElementById('modal-hook');
-
   if (!modalHook) {
     console.error('Error: #modal-hook is missing in the DOM.');
     return null;
   }
 
-  const content = (
+  return ReactDOM.createPortal(
     <div
       className='modal'
       role='dialog'
       aria-labelledby='modal-title'
       aria-describedby='modal-description'
-      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+      onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicked inside
     >
       <header className='modal__header'>
         <h2 id='modal-title'>PICK YOUR MERCH STORE</h2>
@@ -87,10 +87,9 @@ const ModalOverlay = ({ onCancel }) => {
           CLOSE
         </button>
       </footer>
-    </div>
+    </div>,
+    modalHook
   );
-
-  return ReactDOM.createPortal(content, modalHook);
 };
 
 const Modal = ({ show, onCancel }) => {
@@ -105,8 +104,10 @@ const Modal = ({ show, onCancel }) => {
       document.addEventListener('keydown', handleEscape);
     }
 
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [show, onCancel]);
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [show, onCancel]); // ✅ Ensures event listeners are properly managed
 
   return (
     <>

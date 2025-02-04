@@ -14,7 +14,10 @@ const Backdrop = (props) => {
   return ReactDOM.createPortal(
     <div
       className='backdrop'
-      onClick={(e) => e.stopPropagation() || props.onClick()}
+      onClick={(e) => {
+        e.stopPropagation(); // ✅ Prevents click event from bubbling up
+        props.onClick(); // ✅ Calls onClick safely
+      }}
     ></div>,
     backdropHook
   );

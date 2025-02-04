@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // ✅ React 17 and earlier use 'react-dom'
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-// ✅ Use ReactDOM.render() for React 17 or lower
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+window.onload = function () {
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    ReactDOM.render(<App />, rootElement);
+  } else {
+    console.error('❌ Error: #root is missing in the DOM.');
+  }
+};

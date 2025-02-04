@@ -20,6 +20,7 @@ const VideoModalOverlay = ({ children }) => {
       className='video-modal'
       role='dialog'
       aria-labelledby='video-modal-title'
+      onClick={(e) => e.stopPropagation()} // ✅ Prevents accidental closing when clicking inside
     >
       <div className='video-modal__content'>{children}</div>
     </div>,
@@ -28,7 +29,6 @@ const VideoModalOverlay = ({ children }) => {
 };
 
 const VideoModal = ({ show, onCancel, ...props }) => {
-  // ✅ Destructure props at the top
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -41,7 +41,7 @@ const VideoModal = ({ show, onCancel, ...props }) => {
     }
 
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [show, onCancel]); // ✅ Now properly destructured
+  }, [show, onCancel]);
 
   return (
     <>
@@ -53,6 +53,7 @@ const VideoModal = ({ show, onCancel, ...props }) => {
         timeout={200}
         classNames='modal'
       >
+        {/* ✅ Pass all props safely to the overlay */}
         <VideoModalOverlay {...props} />
       </CSSTransition>
     </>
