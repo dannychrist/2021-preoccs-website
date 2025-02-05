@@ -49,7 +49,7 @@ const Slider = ({ slides, autoPlay = 5 }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -57,13 +57,13 @@ const Wrapper = styled.div`
 
 // Keyframe animations for smooth fading and blur
 const fadeIn = keyframes`
-  0% { opacity: 0; filter: blur(30px); }
+  0% { opacity: 0; filter: blur(10px); }
   100% { opacity: 1; filter: blur(0px); }
 `;
 
 const fadeOut = keyframes`
   0% { opacity: 1; filter: blur(0px); }
-  100% { opacity: 0; filter: blur(30px); }
+  100% { opacity: 0; filter: blur(10px); }
 `;
 
 const ImageContainer = styled.div`
