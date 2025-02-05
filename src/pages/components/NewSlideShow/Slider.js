@@ -50,7 +50,7 @@ const Slider = ({ slides, autoPlay = 5 }) => {
 const Wrapper = styled.div`
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
 `;

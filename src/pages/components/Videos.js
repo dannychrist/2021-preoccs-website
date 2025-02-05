@@ -5,19 +5,19 @@ import Video from './Video';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 
 // Screenshotsill
-import Focus from '../../assets/video-screenshots/focus.png';
-import Slowly from '../../assets/video-screenshots/slowly.png';
-import DeathOfMelody from '../../assets/video-screenshots/deathofmelody.png';
-import Ricochet from '../../assets/records/arrangements-white.jpg';
-import CanelaParty from '../../assets/video-screenshots/canelaparty.png';
-import Disarray from '../../assets/video-screenshots/disarray.png';
-import Antidote from '../../assets/video-screenshots/antidote.png';
-import Anxiety from '../../assets/video-screenshots/anxiety.png';
-import Memory from '../../assets/video-screenshots/memory.png';
-import Degraded from '../../assets/video-screenshots/degraded.png';
-import BunkerBuster from '../../assets/video-screenshots/bunkerbuster.png';
-import ContinentalShelf from '../../assets/video-screenshots/continentalshelf.png';
-import Silhouettes from '../../assets/video-screenshots/silhouettes.png';
+import Focus from '../../assets/video-screenshots/focus.webp';
+import Slowly from '../../assets/video-screenshots/slowly.webp';
+import DeathOfMelody from '../../assets/video-screenshots/deathofmelody.webp';
+import Ricochet from '../../assets/records/arrangements-white.webp';
+import CanelaParty from '../../assets/video-screenshots/canelaparty.webp';
+import Disarray from '../../assets/video-screenshots/disarray.webp';
+import Antidote from '../../assets/video-screenshots/antidote.webp';
+import Anxiety from '../../assets/video-screenshots/anxiety.webp';
+import Memory from '../../assets/video-screenshots/memory.webp';
+import Degraded from '../../assets/video-screenshots/degraded.webp';
+import BunkerBuster from '../../assets/video-screenshots/bunkerbuster.webp';
+import ContinentalShelf from '../../assets/video-screenshots/continentalshelf.webp';
+import Silhouettes from '../../assets/video-screenshots/silhouettes.webp';
 
 import './Videos.css';
 

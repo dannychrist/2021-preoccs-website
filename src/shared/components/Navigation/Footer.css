@@ -1,44 +1,59 @@
+/* Footer stays at the bottom */
 .footer {
   background: var(--clr-dark);
   color: var(--clr-accent);
   text-align: center;
-  /* align-content: center; */
-  padding: .2em 0;
-  justify-content: center;
+  padding-top: 0; /* Reduced padding at the top of the footer */
+  padding-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Ensure everything is centered */
+  width: 100%;
+  position: fixed; /* Fix it at the bottom */
+  bottom: 0;
+  left: 0;
 }
 
-.footer a { 
-  color: inherit; 
+/* Footer links */
+.footer a {
+  color: inherit;
   text-decoration: none;
   border: none;
 }
 
-#icons {
-  font-size: 1.1em;
-}
-
-#icons:hover {
-  color: var(--clr-medium);
-}
-
+/* Social links container */
 .social-list {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin: 2em 0 0;
+  align-items: center;
+  margin-bottom: 0.3em; /* Keeps links and copyright closer */
   padding: 0;
 }
 
+/* Remove default spacing from li elements JUST for social links */
 .social-list__item {
-  /* margin: 0 .05em; */
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
+/* Individual social items */
+.social-list__item {
+  display: flex;
+  align-items: center;
+}
+
+/* Individual social links */
 .social-list__link {
-  padding: 0.5em;
+  padding: 0.4em;
 }
 
+/* Copyright text */
 .copyright {
-  font-size: .8rem;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0;
 }

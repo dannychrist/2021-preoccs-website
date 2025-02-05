@@ -46,7 +46,7 @@ const Footer = (props) => {
             <i id='icons' className='fab fa-twitter'></i>
           </a>
         </li>
-        <li>
+        <li className='social-list__item'>
           <a
             className='social-list__link'
             href='https://ffm.to/preoccupationsspotify'

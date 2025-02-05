@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import './Live.css';
 
 const Live = () => {
-  const location = useLocation();
-  const isLive = location.pathname === '/live';
-
   // Use useEffect to dynamically load the Seated widget script
   useEffect(() => {
     // Check if the script is already loaded to avoid duplicate loading
@@ -28,12 +24,7 @@ const Live = () => {
       <div className='live-header'>
         <h2>UPCOMING TOURS</h2>
       </div>
-      <div
-        style={{
-          minHeight: isLive ? '60vh' : 'auto',
-        }}
-        className='live-div'
-      >
+      <div className='live-div'>
         {/* Seated widget container */}
         <div
           id='seated-55fdf2c0'

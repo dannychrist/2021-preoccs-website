@@ -15,6 +15,8 @@ import Live from './pages/components/Live';
 import Videos from './pages/components/Videos';
 import Footer from './shared/components/Navigation/Footer';
 
+import './App.css';
+
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -30,18 +32,19 @@ const App = () => {
       <Router>
         <ScrollToTop>
           <MainNavigation />
-
-          <Switch>
-            <Route path='/' exact>
-              <Home />
-            </Route>
-            <Route path='/video'>
-              <Videos />
-            </Route>
-            <Route path='/live'>
-              <Live />
-            </Route>
-          </Switch>
+          <div className='main-content'>
+            <Switch>
+              <Route path='/' exact>
+                <Home />
+              </Route>
+              <Route path='/video'>
+                <Videos />
+              </Route>
+              <Route path='/live'>
+                <Live />
+              </Route>
+            </Switch>
+          </div>
           <Footer />
         </ScrollToTop>
       </Router>
