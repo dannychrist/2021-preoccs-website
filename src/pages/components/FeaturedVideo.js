@@ -21,8 +21,8 @@ const FeaturedVideo = (props) => {
       <div className='featured-video'>
         <iframe
           className='f-vid'
-          // src='https://www.youtube.com/embed/v1hJz7xjFTY'
-          src='https://www.youtube.com/embed/npLTTvKpxPU?si=CANALUDNfDihzBRD'
+          // src='https://www.youtube-nocookie.com/embed/v1hJz7xjFTY'
+          src='https://www.youtube-nocookie.com/embed/npLTTvKpxPU?si=CANALUDNfDihzBRD'
           title='featured-video'
           alt='featured-video'
           style={{ border: 'none' }}
@@ -30,6 +30,7 @@ const FeaturedVideo = (props) => {
           webkitallowfullscreen='true'
           mozallowfullscreen='true'
           onLoad={onLoad}
+          sandbox='allow-scripts allow-same-origin'
         ></iframe>
       </div>
     </div>

@@ -16,6 +16,7 @@ const PreSave = () => {
         width='350'
         height='300'
         src='https://orcd.co/preoccsfocus/widget?width=350&height=275&note='
+        sandbox='allow-scripts allow-same-origin'
       ></iframe>
     </Wrapper>
   );

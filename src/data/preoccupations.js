@@ -30,7 +30,7 @@ export const Preoccupations = [
             id: '003',
             title: 'Disarray',
             length: '3:49',
-            video: 'https://www.youtube.com/embed/keq2JOyZ6KI',
+            video: 'https://www.youtube-nocookie.com/embed/keq2JOyZ6KI',
           },
           {
             id: '004',
@@ -41,7 +41,7 @@ export const Preoccupations = [
             id: '005',
             title: 'Antidote',
             length: '6:01',
-            video: 'https://www.youtube.com/embed/qRc9XW7ofGY',
+            video: 'https://www.youtube-nocookie.com/embed/qRc9XW7ofGY',
           },
           {
             id: '006',
@@ -71,7 +71,7 @@ export const Preoccupations = [
             id: '001',
             title: 'Anxiety',
             length: '4:29',
-            video: 'https://www.youtube.com/embed/csMbqrFT1dM',
+            video: 'https://www.youtube-nocookie.com/embed/csMbqrFT1dM',
           },
           {
             id: '002',
@@ -87,13 +87,13 @@ export const Preoccupations = [
             id: '004',
             title: 'Memory',
             length: '11:26',
-            video: 'https://www.youtube.com/embed/pQdVnKpv1Sk',
+            video: 'https://www.youtube-nocookie.com/embed/pQdVnKpv1Sk',
           },
           {
             id: '005',
             title: 'Degraded',
             length: '4:00',
-            video: 'https://www.youtube.com/embed/vykhXVCSmz0',
+            video: 'https://www.youtube-nocookie.com/embed/vykhXVCSmz0',
           },
           {
             id: '006',
@@ -143,19 +143,19 @@ export const Preoccupations = [
             id: '004',
             title: 'Bunker Buster',
             length: '5:55',
-            video: 'https://www.youtube.com/embed/ZOLIHJKCu8M',
+            video: 'https://www.youtube-nocookie.com/embed/ZOLIHJKCu8M',
           },
           {
             id: '005',
             title: 'Continental Shelf',
             length: '3:20',
-            video: 'https://www.youtube.com/embed/hdMz7BUtOvk',
+            video: 'https://www.youtube-nocookie.com/embed/hdMz7BUtOvk',
           },
           {
             id: '006',
             title: 'Silhouettes',
             length: '4:12',
-            video: 'https://www.youtube.com/embed/zW1kP99mok4',
+            video: 'https://www.youtube-nocookie.com/embed/zW1kP99mok4',
           },
           {
             id: '007',
@@ -213,8 +213,7 @@ export const Preoccupations = [
         title: '7 Inch',
         label: 'Jagjaguwar/Flemish Eye (2016)',
         link: 'https://geni.us/preoccs_7-inch',
-        cover:
-        SevenInch,
+        cover: SevenInch,
         songs: [
           {
             id: '001',
@@ -247,47 +246,47 @@ export const Preoccupations = [
       {
         id: '001',
         title: 'March of Progress, Canela Party',
-        link: 'https://www.youtube.com/embed/B2vaIO5WOsQ',
+        link: 'https://www.youtube-nocookie.com/embed/B2vaIO5WOsQ',
       },
       {
         id: '003',
         title: 'Dissary',
-        link: 'https://www.youtube.com/embed/keq2JOyZ6KI',
+        link: 'https://www.youtube-nocookie.com/embed/keq2JOyZ6KI',
       },
       {
         id: '004',
         title: 'Antidote',
-        link: 'https://www.youtube.com/embed/qRc9XW7ofGY',
+        link: 'https://www.youtube-nocookie.com/embed/qRc9XW7ofGY',
       },
       {
         id: '005',
         title: 'Anxiety',
-        link: 'https://www.youtube.com/embed/csMbqrFT1dM',
+        link: 'https://www.youtube-nocookie.com/embed/csMbqrFT1dM',
       },
       {
         id: '006',
         title: 'Memory',
-        link: 'https://www.youtube.com/embed/pQdVnKpv1Sk',
+        link: 'https://www.youtube-nocookie.com/embed/pQdVnKpv1Sk',
       },
       {
         id: '007',
         title: 'Degraded',
-        link: 'https://www.youtube.com/embed/vykhXVCSmz0',
+        link: 'https://www.youtube-nocookie.com/embed/vykhXVCSmz0',
       },
       {
         id: '008',
         title: 'Bunker Buster',
-        link: 'https://www.youtube.com/embed/ZOLIHJKCu8M',
+        link: 'https://www.youtube-nocookie.com/embed/ZOLIHJKCu8M',
       },
       {
         id: '009',
         title: 'Continental Shelf',
-        link: 'https://www.youtube.com/embed/hdMz7BUtOvk',
+        link: 'https://www.youtube-nocookie.com/embed/hdMz7BUtOvk',
       },
       {
         id: '010',
         title: 'Silhouettes',
-        link: 'https://www.youtube.com/embed/zW1kP99mok4',
+        link: 'https://www.youtube-nocookie.com/embed/zW1kP99mok4',
       },
     ],
   },
