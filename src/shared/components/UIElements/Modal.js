@@ -32,7 +32,7 @@ const ModalOverlay = ({ onCancel }) => {
         <ul>
           <li>
             <a
-              href='https://bornlosersrecords.com'
+              href='https://orcd.co/preoccsfocus'
               target='_blank'
               rel='noopener noreferrer'
             >

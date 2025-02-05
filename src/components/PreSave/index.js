@@ -10,7 +10,7 @@ const PreSave = () => {
         width='300'
         height='250'
         src='https://ffm.to/arrangements/widget?width=300&height=250&note='
-        sandbox='allow-scripts allow-same-origin'
+        sandbox='allow-scripts allow-same-origin allow-presentation'
       ></iframe>
     </Wrapper>
   );

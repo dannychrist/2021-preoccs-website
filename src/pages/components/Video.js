@@ -30,7 +30,7 @@ const Video = ({ title, link, screenshot, onLoad }) => {
             }
           }}
           onLoad={onLoad}
-          sandbox='allow-scripts allow-same-origin'
+          sandbox='allow-scripts allow-same-origin allow-presentation'
         ></iframe>
       </VideoModal>
 
