@@ -8,7 +8,7 @@ const Slider = ({ slides, autoPlay = 5 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [prevSlide, setPrevSlide] = useState(slides.length - 1);
   const [isFading, setIsFading] = useState(true);
-  const intervalRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   // ✅ Memoize transitionSlides to prevent re-creation on every render
   const transitionSlides = useCallback(() => {
@@ -21,15 +21,16 @@ const Slider = ({ slides, autoPlay = 5 }) => {
     }, 6000); // Matches fade-out duration
   }, [currentSlide, slides.length]);
 
-  // ✅ Ensure interval runs properly with correct dependencies
+  // ✅ Fix memory leak by using `setTimeout` instead of `setInterval`
   useEffect(() => {
-    clearInterval(intervalRef.current); // Clear previous interval before setting a new one
+    // Clear previous timeout before setting a new one
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-    intervalRef.current = setInterval(() => {
+    timeoutRef.current = setTimeout(() => {
       transitionSlides();
     }, autoPlay * 1000 + 6000); // Ensuring smooth transitions
 
-    return () => clearInterval(intervalRef.current); // Cleanup on unmount or dependency change
+    return () => clearTimeout(timeoutRef.current); // Cleanup on unmount or dependency change
   }, [autoPlay, transitionSlides]); // ✅ Correct dependencies
 
   return (
