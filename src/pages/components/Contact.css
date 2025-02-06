@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 400px;
   text-align: center;
   box-shadow: var(--bs);
-  letter-spacing: 5px;
+  letter-spacing: 3px;
+  margin: 0 auto;
 }
 
 .contact-header-div {
@@ -15,10 +16,44 @@
   background: var(--clr-dark);
 }
 
+/* Alternating Background Colors */
+.contact-div:nth-child(odd) {
+  background: var(--clr-light);
+}
+
+.contact-div:nth-child(even) {
+  background: var(--clr-medium);
+}
+
 .contact-div {
   padding: 10px;
+  margin: 5px;
   font-weight: var(--fw-bold);
-  background: var(--clr-medium);
+  border-radius: 10px;
+  cursor: pointer; /* Makes the whole div clickable */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-div:hover {
+  background: var(--clr-accent);
+  transform: translateY(-2px);
+}
+
+.contact-div:active {
+  transform: translateY(0);
+}
+
+.contact-div p {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adds space between text and icon */
+}
+
+.contact-div i {
+  font-size: 18px;
 }
 
 .main-contact-div a {
@@ -28,4 +63,11 @@
 
 .main-contact-div a:hover {
   color: var(--clr-accent);
+}
+
+@media (max-width: 500px) {
+  .main-contact-div {
+    width: 80%;
+    margin: 0 auto;
+  }
 }

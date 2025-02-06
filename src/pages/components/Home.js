@@ -20,7 +20,7 @@ const Home = () => {
   const images = [IllAtEase, IllAtEase2, IllatEase3];
 
   return (
-    <div>
+    <div className='home-container'>
       <Slider slides={images} />
       <PreOrder />
       <div className='pre-save-wrapper'>

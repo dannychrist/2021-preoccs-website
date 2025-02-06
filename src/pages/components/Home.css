@@ -9,3 +9,7 @@
     flex-direction: row;
   }
 }
+
+.home-container {
+  margin-bottom: 50px;
+}

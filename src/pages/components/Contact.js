@@ -1,6 +1,12 @@
 import React from 'react';
-
 import './Contact.css';
+
+const contacts = [
+  { label: 'NA Booking', email: 'bettsmarshallk@gmail.com' },
+  { label: 'Euro/UK Booking', email: 'Bas@belmontbookings.nl' },
+  { label: 'Band Contact', email: 'Preoccupationsband@gmail.com' },
+  { label: 'PR', email: 'Gracej@grandstandhq.com' },
+];
 
 const Contact = () => {
   return (
@@ -8,38 +14,24 @@ const Contact = () => {
       <div className='contact-header-div'>
         <h2>CONTACT US</h2>
       </div>
-      <div className='contact-div'>
-        <h4>
-          NA Booking:{' '}
-          <a href='mailto: bettsmarshallk@gmail.com'>
+      {contacts.map((contact, index) => (
+        <div
+          key={index}
+          className='contact-div'
+          onClick={() => (window.location.href = `mailto:${contact.email}`)}
+          role='button'
+          tabIndex={0} // Allows keyboard accessibility
+          onKeyDown={(e) =>
+            e.key === 'Enter' &&
+            (window.location.href = `mailto:${contact.email}`)
+          }
+        >
+          <p>
+            {contact.label}
             <i className='fas fa-envelope'></i>
-          </a>
-        </h4>
-      </div>
-      <div className='contact-div' style={{ background: 'var(--clr-light)' }}>
-        <h4>
-          Euro/UK Booking:{' '}
-          <a href='mailto: Bas@belmontbookings.nl'>
-            <i className='fas fa-envelope'></i>
-          </a>
-        </h4>
-      </div>
-      <div className='contact-div'>
-        <h4>
-          Band Contact:{' '}
-          <a href='Preoccupationsband@gmail.com'>
-            <i className='fas fa-envelope'></i>
-          </a>
-        </h4>
-      </div>
-      <div className='contact-div' style={{ background: 'var(--clr-light)' }}>
-        <h4>
-          PR:{' '}
-          <a href='mailto: Gracej@grandstandhq.com'>
-            <i className='fas fa-envelope'></i>
-          </a>
-        </h4>
-      </div>
+          </p>
+        </div>
+      ))}
     </div>
   );
 };
