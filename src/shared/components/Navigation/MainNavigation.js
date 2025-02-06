@@ -63,6 +63,7 @@ const MainNavigation = () => {
       <MainHeader>
         <button
           className='main-navigation__menu-btn'
+          aria-label='Open Menu'
           onClick={openDrawerHandler}
         >
           <i id='dropdown-icon' className='fas fa-bars'></i>

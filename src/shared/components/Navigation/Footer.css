@@ -49,6 +49,10 @@
   padding: 0.4em;
 }
 
+.social-list__link:hover {
+  color: var(--clr-medium);
+}
+
 /* Copyright text */
 .copyright {
   font-size: 0.7rem;
