@@ -2,7 +2,6 @@
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  margin-top: 10vh;
 }
 
 .live-header {
@@ -19,5 +18,27 @@
 }
 
 .seated-follow-text {
+  margin: 15px;
   color: white;
+}
+
+.seated-events-table {
+  border: none !important;
+  /* padding: 0 !important; */
+  /* margin: 0 !important; */
+  background: transparent !important;
+}
+
+.seated-no-events {
+  border: none !important;
+  /* padding: 0 !important; */
+  /* margin: 0 !important; */
+  background: transparent !important;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .live-div {
+    margin: 0 30px;
+  }
 }
