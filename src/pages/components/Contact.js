@@ -2,9 +2,9 @@ import React from 'react';
 import './Contact.css';
 
 const contacts = [
-  { label: 'NA Booking', email: 'bettsmarshallk@gmail.com' },
-  { label: 'Euro/UK Booking', email: 'Bas@belmontbookings.nl' },
-  { label: 'Band Contact', email: 'Preoccupationsband@gmail.com' },
+  { label: 'NA BOOKING', email: 'bettsmarshallk@gmail.com' },
+  { label: 'EURO/UK BOOKING', email: 'Bas@belmontbookings.nl' },
+  { label: 'BAND CONTACT', email: 'Preoccupationsband@gmail.com' },
   { label: 'PR', email: 'Gracej@grandstandhq.com' },
 ];
 
