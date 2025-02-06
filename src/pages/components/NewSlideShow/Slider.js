@@ -4,6 +4,10 @@ import styled, { keyframes } from 'styled-components';
 // Components
 import Slide from './Slide';
 
+// Images
+import PreoccsHome from '../../../assets/home/preoccs-home.webp';
+import IllAtEaseHome from '../../../assets/home/ill-at-ease-home.webp';
+
 const Slider = ({ slides, autoPlay = 5 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [prevSlide, setPrevSlide] = useState(slides.length - 1);
