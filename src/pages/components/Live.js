@@ -24,7 +24,7 @@ const Live = () => {
   }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
-    <>
+    <div className='live-container'>
       <div className='live-header'>
         <h2>LIVE</h2>
       </div>
@@ -36,7 +36,7 @@ const Live = () => {
           data-css-version='2'
         ></div>
       </div>
-    </>
+    </div>
   );
 };
 

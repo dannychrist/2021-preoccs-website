@@ -20,17 +20,14 @@ const Video = ({ title, link, screenshot, onLoad }) => {
       <VideoModal show={showModal} onCancel={closeModalHandler} header={title}>
         <iframe
           title={title}
+          alt='modal-video'
           src={link}
           style={{ width: '100%', height: '100%', border: 'none' }}
           allowFullScreen
-          ref={(iframe) => {
-            if (iframe) {
-              iframe.setAttribute('webkitallowfullscreen', 'true'); // ✅ Fix for Safari
-              iframe.setAttribute('mozallowfullscreen', 'true'); // ✅ Fix for Firefox
-            }
-          }}
+          webkitallowfullscreen='true'
+          mozallowfullscreen='true'
           onLoad={onLoad}
-          sandbox='allow-scripts allow-same-origin allow-presentation'
+          sandbox='allow-scripts allow-same-origin allow-presentation allow-popups'
         ></iframe>
       </VideoModal>
 

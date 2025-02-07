@@ -10,9 +10,6 @@
   justify-content: center;
 }
 
-.live-page {
-}
-
 .live-header {
   font-weight: var(--fw-bold);
   color: var(--clr-accent);

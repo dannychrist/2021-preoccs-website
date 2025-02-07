@@ -30,7 +30,7 @@ const FeaturedVideo = (props) => {
           webkitallowfullscreen='true'
           mozallowfullscreen='true'
           onLoad={onLoad}
-          sandbox='allow-scripts allow-same-origin allow-presentation'
+          sandbox='allow-scripts allow-same-origin allow-presentation allow-popups'
         ></iframe>
       </div>
     </div>
