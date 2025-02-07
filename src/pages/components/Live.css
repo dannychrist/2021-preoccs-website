@@ -42,3 +42,9 @@
     margin: 0 30px;
   }
 }
+
+@media (max-width: 500px) {
+  .live-header {
+    padding: 8vh 20px;
+  }
+}

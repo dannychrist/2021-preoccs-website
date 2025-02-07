@@ -71,3 +71,9 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 500px) {
+  .contact-header-div {
+    padding: 8vh 20px;
+  }
+}
