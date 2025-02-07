@@ -22,7 +22,7 @@ const Live = () => {
   return (
     <>
       <div className='live-header'>
-        <h2>UPCOMING TOURS</h2>
+        <h2>LIVE</h2>
       </div>
       <div className='live-div'>
         {/* Seated widget container */}

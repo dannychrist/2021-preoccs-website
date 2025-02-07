@@ -22,11 +22,11 @@ const Home = () => {
   return (
     <div className='home-container'>
       <Slider slides={images} />
-      <PreOrder />
-      <div className='pre-save-wrapper'>
-        {/* <PreSave /> */}
+      {/* <PreOrder /> */}
+      {/* <div className='pre-save-wrapper'>
+        <PreSave />
         <PreSaveSingle />
-      </div>
+      </div> */}
       <FeaturedVideo />
       <Live />
       <Contact />

@@ -12,7 +12,7 @@
 .contact-header-div {
   font-weight: var(--fw-bold);
   color: var(--clr-accent);
-  padding: 20px;
+  padding: 10vh 20px;
   background: var(--clr-dark);
 }
 
