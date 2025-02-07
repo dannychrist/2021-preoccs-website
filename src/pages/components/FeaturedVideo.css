@@ -5,7 +5,7 @@
 .featured-video-header-div {
   font-weight: var(--fw-bold);
   color: var(--clr-accent);
-  padding: 10vh 20px;
+  padding: 8vh 20px;
   background: var(--clr-dark);
   text-align: center;
 }
@@ -25,8 +25,8 @@
   height: 100%;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .featured-video-header-div {
     padding: 8vh 20px;
   }
-}
+} */

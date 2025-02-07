@@ -1,3 +1,9 @@
+.live-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; /* Makes it take the remaining space */
+}
+
 .live-div {
   display: flex;
   /* align-items: center; */
@@ -5,16 +11,12 @@
 }
 
 .live-page {
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  min-height: 60vh; /* Applies when on /live */
 }
 
 .live-header {
   font-weight: var(--fw-bold);
   color: var(--clr-accent);
-  padding: 10vh 20px;
+  padding: 8vh 20px;
   background: var(--clr-dark);
   text-align: center;
   letter-spacing: 5px;
@@ -44,21 +46,12 @@
   color: white;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .live-div {
     margin: 0 30px;
   }
 
   .live-page {
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    min-height: 63vh; /* Applies when on /live */
-  }
-}
-
-@media (max-width: 500px) {
-  .live-header {
-    padding: 8vh 20px;
+    min-height: 60vh;
   }
 }

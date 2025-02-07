@@ -131,7 +131,7 @@ const MeltImage = styled.img`
   min-width: 22%;
   height: auto;
   opacity: 0;
-  will-change: opacity, transform; /* ✅ Improves animation performance */
+  will-change: opacity, transform;
 
   &.melt-in:first-of-type {
     bottom: 15%;
@@ -173,18 +173,18 @@ const MeltImage = styled.img`
 // **Pre-Save Section Container**
 const PreSaveContainer = styled.div`
   position: absolute;
-  top: 42%; /* ✅ Slightly higher for better balance */
+  top: 45%; /* ✅ Moved it down a bit */
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 0;
-  animation: ${fadeIn} 5s ease-out 7s forwards; /* ✅ Now fades in after Ill At Ease */
+  animation: ${fadeIn} 5s ease-out 7s forwards;
 `;
 
 // **Subtle Small Text Above Button**
 const SmallText = styled.p`
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: bold;
   color: #ddd;
   letter-spacing: 1px;
   margin-bottom: 8px;
@@ -195,7 +195,7 @@ const PreSaveButton = styled.a`
   background: rgba(0, 0, 0, 0.7); /* ✅ Darker background */
   color: white;
   padding: 14px 28px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
