@@ -65,6 +65,18 @@ const Slider = ({ slides, autoPlay = 5 }) => {
         loading='eager'
         fetchpriority='high'
       />
+
+      {/* Pre-Save Section */}
+      <PreSaveContainer>
+        <SmallText>NEW SINGLE</SmallText>
+        <PreSaveButton
+          href='https://orcd.co/preoccsfocus'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Pre-Save "Focus" Now
+        </PreSaveButton>
+      </PreSaveContainer>
     </Wrapper>
   );
 };
@@ -114,11 +126,11 @@ const ImageContainer = styled.div`
 // **Melt-In Effect for Overlay Images**
 const MeltImage = styled.img`
   position: absolute;
-  width: calc(10% + 7vw); /* Adjusts dynamically with viewport */
-  max-width: 28%; /* Prevents it from getting too big on desktop */
-  min-width: 22%; /* Keeps it readable on small screens */
+  width: calc(10% + 7vw);
+  max-width: 28%;
+  min-width: 22%;
   height: auto;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
 
   &.melt-in:first-of-type {
     bottom: 15%;
@@ -154,6 +166,54 @@ const MeltImage = styled.img`
   @media (max-width: 500px) {
     width: 55%;
     max-width: 60%;
+  }
+`;
+
+// **Pre-Save Section Container**
+const PreSaveContainer = styled.div`
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  animation: ${fadeIn} 6s ease-out 6s forwards;
+`;
+
+// **Subtle Small Text Above Button**
+const SmallText = styled.p`
+  font-size: 14px;
+  font-weight: 400;
+  color: #ddd;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+`;
+
+// **Styled Pre-Save Button**
+const PreSaveButton = styled.a`
+  background: rgba(0, 0, 0, 0.6); /* Darker background */
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+
+  &:hover {
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    animation: none; /* Stops blur effect on hover */
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
 
