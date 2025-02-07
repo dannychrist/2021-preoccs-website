@@ -10,6 +10,7 @@ import Modal from '../UIElements/Modal'; // ✅ Import Modal
 
 // Icons
 import Preoccs from '../../../assets/preoccs_white.webp';
+import NewPreoccs from '../../../assets/preoccs-new-white.webp';
 
 import './MainNavigation.css';
 
@@ -70,7 +71,7 @@ const MainNavigation = () => {
         </button>
         <h1 className='main-navigation__title'>
           <Link to='/'>
-            <img src={Preoccs} width={250} alt='logo' />
+            <img src={NewPreoccs} width={250} alt='logo' />
           </Link>
         </h1>
         <nav className='main-navigation__header-nav'>
