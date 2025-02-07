@@ -92,18 +92,18 @@ const Wrapper = styled.div`
 
 // **Keyframe Animations for Fading and Blurring**
 const fadeIn = keyframes`
-  0% { opacity: 0; filter: blur(10px); }
-  100% { opacity: 1; filter: blur(0px); }
+  0% { opacity: 0; -webkit-filter: blur(10px); filter: blur(10px); }
+  100% { opacity: 1; -webkit-filter: blur(0px); filter: blur(0px); }
 `;
 
 const fadeOut = keyframes`
-  0% { opacity: 1; filter: blur(0px); }
-  100% { opacity: 0; filter: blur(10px); }
+  0% { opacity: 1; -webkit-filter: blur(0px); filter: blur(0px); }
+  100% { opacity: 0; -webkit-filter: blur(10px); filter: blur(10px); }
 `;
 
 const swellBlurIn = keyframes`
-  0% { opacity: 0; transform: scale(0.8); filter: blur(10px); }
-  100% { opacity: 1; transform: scale(1); filter: blur(0px); }
+  0% { opacity: 0; transform: scale(0.8); -webkit-filter: blur(10px); filter: blur(10px); }
+  100% { opacity: 1; transform: scale(1); -webkit-filter: blur(0px); filter: blur(0px); }
 `;
 
 // **Image Container for Fading Slides**
@@ -131,6 +131,7 @@ const MeltImage = styled.img`
   min-width: 22%;
   height: auto;
   opacity: 0;
+  will-change: opacity, transform; /* ✅ Improves animation performance */
 
   &.melt-in:first-of-type {
     bottom: 15%;
@@ -172,12 +173,12 @@ const MeltImage = styled.img`
 // **Pre-Save Section Container**
 const PreSaveContainer = styled.div`
   position: absolute;
-  top: 45%;
+  top: 42%; /* ✅ Slightly higher for better balance */
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 0;
-  animation: ${fadeIn} 6s ease-out 6s forwards;
+  animation: ${fadeIn} 5s ease-out 7s forwards; /* ✅ Now fades in after Ill At Ease */
 `;
 
 // **Subtle Small Text Above Button**
@@ -191,7 +192,7 @@ const SmallText = styled.p`
 
 // **Styled Pre-Save Button**
 const PreSaveButton = styled.a`
-  background: rgba(0, 0, 0, 0.6); /* Darker background */
+  background: rgba(0, 0, 0, 0.7); /* ✅ Darker background */
   color: white;
   padding: 14px 28px;
   font-size: 18px;
@@ -201,15 +202,15 @@ const PreSaveButton = styled.a`
   text-align: center;
   display: inline-block;
   border-radius: 30px;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
   letter-spacing: 1px;
   text-transform: uppercase;
   opacity: 0.9;
 
   &:hover {
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 1); /* ✅ Full black on hover */
     opacity: 1;
-    animation: none; /* Stops blur effect on hover */
+    animation: none; /* ✅ Stops all hover flickering */
   }
 
   &:active {
