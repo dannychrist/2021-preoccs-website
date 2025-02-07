@@ -4,6 +4,13 @@
   justify-content: center;
 }
 
+.live-page {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  min-height: 60vh; /* Applies when on /live */
+}
+
 .live-header {
   font-weight: var(--fw-bold);
   color: var(--clr-accent);
@@ -40,6 +47,13 @@
 @media (max-width: 500px) {
   .live-div {
     margin: 0 30px;
+  }
+
+  .live-page {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 63vh; /* Applies when on /live */
   }
 }
 
