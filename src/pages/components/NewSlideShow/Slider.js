@@ -22,7 +22,7 @@ const Slider = ({ slides, autoPlay = 5 }) => {
       setPrevSlide(currentSlide);
       setCurrentSlide((prev) => (prev + 1) % slides.length);
       setIsFading(true);
-    }, 6000); // Matches fade-out duration
+    }, 5000); // Matches fade-out duration
   }, [currentSlide, slides.length]);
 
   // ✅ Auto-restart slideshow every `autoPlay` seconds
@@ -31,7 +31,7 @@ const Slider = ({ slides, autoPlay = 5 }) => {
 
     timeoutRef.current = setTimeout(() => {
       transitionSlides();
-    }, autoPlay * 1000 + 6000); // Ensuring smooth transitions
+    }, autoPlay * 1000 + 5000); // Ensuring smooth transitions
 
     return () => clearTimeout(timeoutRef.current);
   }, [autoPlay, transitionSlides]);
@@ -93,12 +93,12 @@ const ImageContainer = styled.div`
   height: 100%;
 
   &.fadeIn {
-    animation: ${fadeIn} 6s ease-in-out forwards;
+    animation: ${fadeIn} 5s ease-in-out forwards;
     opacity: 1;
   }
 
   &.fadeOut {
-    animation: ${fadeOut} 6s ease-in-out forwards;
+    animation: ${fadeOut} 5s ease-in-out forwards;
     opacity: 0;
   }
 `;
@@ -109,16 +109,17 @@ const MeltImage = styled.img`
   max-width: 40%;
   height: auto;
   opacity: 0; /* Initially hidden */
-  animation: ${swellBlurIn} 5s ease-out forwards; /* 5-sec fade-in + blur reduction */
 
   &.melt-in:first-of-type {
     bottom: 15%;
     left: 10%;
+    animation: ${swellBlurIn} 5s ease-out 1s forwards; /* Now fades in over 10s, starts after 3s */
   }
 
   &.melt-in:last-of-type {
     top: 10%;
     right: 10%;
+    animation: ${swellBlurIn} 5s ease-out 4s forwards; /* Now fades in over 10s, starts after 6s */
   }
 `;
 
