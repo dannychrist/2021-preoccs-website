@@ -49,13 +49,21 @@ const Slider = ({ slides, autoPlay = 5 }) => {
       </ImageContainer>
 
       {/* Animated Preoccs Image (Melt-in Blur Effect) */}
-      <MeltImage src={PreoccsHome} alt='Preoccs Home' className='melt-in' />
+      <MeltImage
+        src={PreoccsHome}
+        alt='Preoccs Home'
+        className='melt-in'
+        loading='eager'
+        fetchpriority='high'
+      />
 
       {/* Animated Ill At Ease Image (Melt-in Blur Effect) */}
       <MeltImage
         src={IllAtEaseHome}
         alt='Ill At Ease Home'
         className='melt-in'
+        loading='eager'
+        fetchpriority='high'
       />
     </Wrapper>
   );
@@ -82,7 +90,7 @@ const fadeOut = keyframes`
 `;
 
 const swellBlurIn = keyframes`
-  0% { opacity: 0; transform: scale(0.8); filter: blur(15px); }
+  0% { opacity: 0; transform: scale(0.8); filter: blur(10px); }
   100% { opacity: 1; transform: scale(1); filter: blur(0px); }
 `;
 
@@ -106,20 +114,46 @@ const ImageContainer = styled.div`
 // **Melt-In Effect for Overlay Images**
 const MeltImage = styled.img`
   position: absolute;
-  max-width: 40%;
+  width: calc(10% + 7vw); /* Adjusts dynamically with viewport */
+  max-width: 28%; /* Prevents it from getting too big on desktop */
+  min-width: 22%; /* Keeps it readable on small screens */
   height: auto;
   opacity: 0; /* Initially hidden */
 
   &.melt-in:first-of-type {
     bottom: 15%;
     left: 10%;
-    animation: ${swellBlurIn} 5s ease-out 1s forwards; /* Now fades in over 10s, starts after 3s */
+    animation: ${swellBlurIn} 5s ease-out 1s forwards;
   }
 
   &.melt-in:last-of-type {
     top: 10%;
     right: 10%;
-    animation: ${swellBlurIn} 5s ease-out 4s forwards; /* Now fades in over 10s, starts after 6s */
+    animation: ${swellBlurIn} 5s ease-out 4s forwards;
+  }
+
+  /* 🖥️ Adjusted for small desktops/laptops */
+  @media (max-width: 1280px) {
+    width: calc(12% + 8vw);
+    max-width: 32%;
+  }
+
+  /* 📱 Bigger images on tablets */
+  @media (max-width: 1024px) {
+    width: calc(18% + 10vw);
+    max-width: 45%;
+  }
+
+  /* 📲 Bigger but controlled on smaller tablets */
+  @media (max-width: 768px) {
+    width: calc(22% + 12vw);
+    max-width: 50%;
+  }
+
+  /* 📞 Largest but balanced size on mobile screens */
+  @media (max-width: 500px) {
+    width: 55%;
+    max-width: 60%;
   }
 `;
 
