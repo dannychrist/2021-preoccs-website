@@ -5,23 +5,14 @@ import styled, { keyframes } from 'styled-components';
 import Slide from './Slide';
 
 // Images
-import PreoccsHome from '../../../assets/home/preoccs-home.webp';
-import IllAtEaseHome from '../../../assets/home/ill-at-ease-home.webp';
+import PreoccsHome from '../../../assets/home/preoccs-home-removebg-preview.webp';
+import IllAtEaseHome from '../../../assets/home/ill-at-ease-home-removebg-preview.webp';
 
 const Slider = ({ slides, autoPlay = 5 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [prevSlide, setPrevSlide] = useState(slides.length - 1);
   const [isFading, setIsFading] = useState(true);
   const timeoutRef = useRef(null);
-  const [isAnimating, setIsAnimating] = useState(true);
-
-  // ✅ Function to restart animations for PreoccsHome & IllAtEaseHome
-  const restartAnimation = useCallback(() => {
-    setIsAnimating(false);
-    setTimeout(() => {
-      setIsAnimating(true);
-    }, 500); // Small delay before restarting animation
-  }, []);
 
   // ✅ Handle slide transitions
   const transitionSlides = useCallback(() => {
@@ -34,17 +25,16 @@ const Slider = ({ slides, autoPlay = 5 }) => {
     }, 6000); // Matches fade-out duration
   }, [currentSlide, slides.length]);
 
-  // ✅ Auto-restart slideshow & animations every `autoPlay` seconds
+  // ✅ Auto-restart slideshow every `autoPlay` seconds
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
     timeoutRef.current = setTimeout(() => {
       transitionSlides();
-      restartAnimation();
     }, autoPlay * 1000 + 6000); // Ensuring smooth transitions
 
     return () => clearTimeout(timeoutRef.current);
-  }, [autoPlay, transitionSlides, restartAnimation]);
+  }, [autoPlay, transitionSlides]);
 
   return (
     <Wrapper>
@@ -58,18 +48,14 @@ const Slider = ({ slides, autoPlay = 5 }) => {
         <Slide content={slides[currentSlide]} />
       </ImageContainer>
 
-      {/* Animated Preoccs Image (Lower Left) */}
-      <AnimatedImage
-        src={PreoccsHome}
-        alt='Preoccs Home'
-        className={isAnimating ? 'animate-preoccs' : ''}
-      />
+      {/* Animated Preoccs Image (Melt-in Blur Effect) */}
+      <MeltImage src={PreoccsHome} alt='Preoccs Home' className='melt-in' />
 
-      {/* Animated Ill At Ease Image (Top Right) */}
-      <AnimatedImage
+      {/* Animated Ill At Ease Image (Melt-in Blur Effect) */}
+      <MeltImage
         src={IllAtEaseHome}
         alt='Ill At Ease Home'
-        className={isAnimating ? 'animate-illatease' : ''}
+        className='melt-in'
       />
     </Wrapper>
   );
@@ -84,7 +70,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-// **Keyframe Animations for Fading and Sliding**
+// **Keyframe Animations for Fading and Blurring**
 const fadeIn = keyframes`
   0% { opacity: 0; filter: blur(10px); }
   100% { opacity: 1; filter: blur(0px); }
@@ -95,14 +81,9 @@ const fadeOut = keyframes`
   100% { opacity: 0; filter: blur(10px); }
 `;
 
-const slideInFromBottomLeft = keyframes`
-  0% { transform: translate(-50%, 50%) scale(0.8); opacity: 0; }
-  100% { transform: translate(0, 0) scale(1); opacity: 1; }
-`;
-
-const slideInFromTopRight = keyframes`
-  0% { transform: translate(50%, -50%) scale(0.8); opacity: 0; }
-  100% { transform: translate(0, 0) scale(1); opacity: 1; }
+const swellBlurIn = keyframes`
+  0% { opacity: 0; transform: scale(0.8); filter: blur(15px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0px); }
 `;
 
 // **Image Container for Fading Slides**
@@ -122,21 +103,20 @@ const ImageContainer = styled.div`
   }
 `;
 
-// **Animated Overlay Images**
-const AnimatedImage = styled.img`
+// **Melt-In Effect for Overlay Images**
+const MeltImage = styled.img`
   position: absolute;
   max-width: 40%;
   height: auto;
   opacity: 0; /* Initially hidden */
+  animation: ${swellBlurIn} 5s ease-out forwards; /* 5-sec fade-in + blur reduction */
 
-  &.animate-preoccs {
-    animation: ${slideInFromBottomLeft} 1.5s ease-out forwards;
-    bottom: 10%;
+  &.melt-in:first-of-type {
+    bottom: 15%;
     left: 10%;
   }
 
-  &.animate-illatease {
-    animation: ${slideInFromTopRight} 1.5s ease-out forwards;
+  &.melt-in:last-of-type {
     top: 10%;
     right: 10%;
   }
