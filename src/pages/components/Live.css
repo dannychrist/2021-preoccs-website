@@ -1,13 +1,13 @@
-.live-container {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1; /* Makes it take the remaining space */
-}
-
 .live-div {
   display: flex;
   /* align-items: center; */
   justify-content: center;
+}
+
+.live-page {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; /* Makes it take the remaining space */
 }
 
 .live-header {
@@ -43,12 +43,12 @@
   color: white;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .live-div {
     margin: 0 30px;
   }
 
   .live-page {
-    min-height: 60vh;
+    min-height: 65vh;
   }
 }

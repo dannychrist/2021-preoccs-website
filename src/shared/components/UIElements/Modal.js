@@ -28,7 +28,7 @@ const ModalOverlay = ({ onCancel }) => {
       </header>
 
       <div className='modal__content'>
-        <h3>NEW RECORDS / MERCH</h3>
+        <h3>CURRENT</h3>
         <ul>
           <li>
             <a
@@ -36,12 +36,12 @@ const ModalOverlay = ({ onCancel }) => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              BORN LOSERS RECORDS (WORLD)
+              BORN LOSERS RECORDS
             </a>
           </li>
         </ul>
 
-        <h3>OLD RECORDS / MERCH</h3>
+        <h3>PAST</h3>
         <ul>
           <li>
             <a
@@ -49,7 +49,7 @@ const ModalOverlay = ({ onCancel }) => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              JAGJAGUWAR (WORLD)
+              JAGJAGUWAR
             </a>
           </li>
           <li>
@@ -67,7 +67,7 @@ const ModalOverlay = ({ onCancel }) => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              BINGO MERCH (ARRANGEMENTS UK / EU)
+              BINGO MERCH (UK / EU)
             </a>
           </li>
           <li>
@@ -76,7 +76,7 @@ const ModalOverlay = ({ onCancel }) => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              HELLO MERCH (ARRANGEMENTS US)
+              HELLO MERCH (US)
             </a>
           </li>
         </ul>
