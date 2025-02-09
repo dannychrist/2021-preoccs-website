@@ -68,13 +68,13 @@ const Slider = ({ slides, autoPlay = 5 }) => {
 
       {/* Pre-Save Section */}
       <PreSaveContainer>
-        <SmallText>NEW SINGLE</SmallText>
+        <SmallText>NEW SINGLE / RECORD</SmallText>
         <PreSaveButton
           href='https://orcd.co/preoccsfocus'
           target='_blank'
           rel='noopener noreferrer'
         >
-          Pre-Save "Focus" Now
+          Stream "Focus" / Preorder Vinyl
         </PreSaveButton>
       </PreSaveContainer>
     </Wrapper>

@@ -9,7 +9,7 @@ import Backdrop from '../UIElements/Backdrop';
 import Modal from '../UIElements/Modal'; // ✅ Import Modal
 
 // Icons
-import Preoccs from '../../../assets/preoccs_white.webp';
+// import Preoccs from '../../../assets/preoccs_white.webp';
 import NewPreoccs from '../../../assets/preoccs-new-white.webp';
 
 import './MainNavigation.css';

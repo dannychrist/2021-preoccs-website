@@ -25,9 +25,8 @@
   text-align: center;
 }
 
-/* ✅ Apply the same styles to both <a> and <button> */
-.nav-links a,
-.nav-links button {
+/* ✅ Standard styling for links */
+.nav-links a {
   color: var(--clr-accent);
   text-transform: uppercase;
   text-decoration: none;
@@ -35,13 +34,25 @@
   display: inline-block;
   padding: 12px 15px;
   position: relative;
-  background: none;
-  border: none;
-  cursor: pointer;
   font-size: inherit;
   font-family: inherit;
 }
 
+/* ✅ Make the button match links exactly */
+.nav-links button {
+  all: unset; /* ✅ Resets all button styles */
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  display: inline-block;
+  padding: 12px 15px;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Active & Focus States */
 .nav-links a:active,
 .nav-links a:focus,
 .nav-links button:active,
@@ -60,7 +71,7 @@
 .nav-links a::after,
 .nav-links button::after {
   background: none repeat scroll 0 0 transparent;
-  bottom: 0;
+  bottom: 0; /* ✅ Forces all elements to match */
   content: '';
   display: block;
   height: 3px;
@@ -77,6 +88,7 @@
   left: 0;
 }
 
+/* ✅ Media Queries */
 @media (min-width: 1000px) {
   .nav-links ul {
     margin-top: 40px;
