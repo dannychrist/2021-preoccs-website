@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core';
 
 const Slide = ({ content, width }) => (
   <div
@@ -12,6 +12,6 @@ const Slide = ({ content, width }) => (
       background-position: center;
     `}
   />
-)
+);
 
-export default Slide
+export default Slide;

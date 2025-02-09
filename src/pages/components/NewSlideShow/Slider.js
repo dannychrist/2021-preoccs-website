@@ -37,47 +37,59 @@ const Slider = ({ slides, autoPlay = 5 }) => {
   }, [autoPlay, transitionSlides]);
 
   return (
-    <Wrapper>
-      {/* Previous Slide (Fading Out) */}
-      <ImageContainer className={!isFading ? 'fadeOut' : ''}>
-        <Slide content={slides[prevSlide]} />
-      </ImageContainer>
-
-      {/* Current Slide (Fading In) */}
-      <ImageContainer className={isFading ? 'fadeIn' : ''}>
-        <Slide content={slides[currentSlide]} />
-      </ImageContainer>
-
-      {/* Animated Preoccs Image (Melt-in Blur Effect) */}
-      <MeltImage
-        src={PreoccsHome}
-        alt='Preoccs Home'
-        className='melt-in'
-        loading='eager'
+    <>
+      {/* ✅ Preload only the first slide's image */}
+      <link
+        rel='preload'
+        as='image'
+        href={slides[0]}
+        type='image/webp'
         fetchpriority='high'
       />
 
-      {/* Animated Ill At Ease Image (Melt-in Blur Effect) */}
-      <MeltImage
-        src={IllAtEaseHome}
-        alt='Ill At Ease Home'
-        className='melt-in'
-        loading='eager'
-        fetchpriority='high'
-      />
+      <Wrapper>
+        {/* Previous Slide (Fading Out) */}
+        <ImageContainer className={!isFading ? 'fadeOut' : ''}>
+          <Slide content={slides[prevSlide]} loading='lazy' />
+        </ImageContainer>
 
-      {/* Pre-Save Section */}
-      <PreSaveContainer>
-        <SmallText>NEW SINGLE / RECORD</SmallText>
-        <PreSaveButton
-          href='https://orcd.co/preoccsfocus'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Stream "Focus" / Preorder Vinyl
-        </PreSaveButton>
-      </PreSaveContainer>
-    </Wrapper>
+        {/* Current Slide (Fading In) */}
+        <ImageContainer className={isFading ? 'fadeIn' : ''}>
+          <Slide
+            content={slides[currentSlide]}
+            loading={currentSlide === 0 ? 'eager' : 'lazy'}
+          />
+        </ImageContainer>
+
+        {/* Animated Preoccs Image (Melt-in Blur Effect) */}
+        <MeltImage
+          src={PreoccsHome}
+          alt='Preoccs Home'
+          className='melt-in'
+          fetchpriority='high'
+        />
+
+        {/* Animated Ill At Ease Image (Melt-in Blur Effect) */}
+        <MeltImage
+          src={IllAtEaseHome}
+          alt='Ill At Ease Home'
+          className='melt-in'
+          fetchpriority='high'
+        />
+
+        {/* Pre-Save Section */}
+        <PreSaveContainer>
+          <SmallText>NEW SINGLE / RECORD</SmallText>
+          <PreSaveButton
+            href='https://orcd.co/preoccsfocus'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Stream "Focus" / Preorder Vinyl
+          </PreSaveButton>
+        </PreSaveContainer>
+      </Wrapper>
+    </>
   );
 };
 
@@ -173,7 +185,7 @@ const MeltImage = styled.img`
 // **Pre-Save Section Container**
 const PreSaveContainer = styled.div`
   position: absolute;
-  top: 45%; /* ✅ Moved it down a bit */
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -192,7 +204,7 @@ const SmallText = styled.p`
 
 // **Styled Pre-Save Button**
 const PreSaveButton = styled.a`
-  background: rgba(0, 0, 0, 0.7); /* ✅ Darker background */
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 14px 28px;
   font-size: 20px;
@@ -208,9 +220,9 @@ const PreSaveButton = styled.a`
   opacity: 0.9;
 
   &:hover {
-    background: rgba(0, 0, 0, 1); /* ✅ Full black on hover */
+    background: rgba(0, 0, 0, 1);
     opacity: 1;
-    animation: none; /* ✅ Stops all hover flickering */
+    animation: none;
   }
 
   &:active {
