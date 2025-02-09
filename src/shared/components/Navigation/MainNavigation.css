@@ -12,36 +12,13 @@
 #dropdown-icon {
   color: var(--clr-accent);
   font-size: 2em;
-  
-}
-
-#shop-icon {
-  margin-top: 4px;
-  text-align: center;
-  font-size: 25px;
-  color: var(--clr-accent);
 }
 
 .main-navigation__title {
   color: var(--clr-accent);
   letter-spacing: 0.6rem;
   padding: 0 10px;
-}
-
-.main-navigation__subheader {
-  color: var(--clr-accent);
-  letter-spacing: 0.1rem;
-  line-height: 1.1;
-  margin: 0;
-  font-size: 0.8em;
-  font-style: italic;
-}
-
-.headers-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px;
+  white-space: nowrap; /* Prevents text from breaking in smaller screens */
 }
 
 .main-navigation__header-nav {
@@ -52,6 +29,7 @@
   height: 100%;
 }
 
+/* Show full nav on desktop */
 @media (min-width: 1000px) {
   .main-navigation__menu-btn {
     display: none;
@@ -62,9 +40,11 @@
   }
 }
 
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .main-navigation__title {
     margin-right: 5px;
+    font-size: 1.8rem; /* ✅ Slightly better scaling for mobile */
+    letter-spacing: 0.4rem; /* ✅ Adjusts spacing for smaller screens */
   }
 }
-
