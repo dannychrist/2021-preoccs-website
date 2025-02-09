@@ -6,8 +6,6 @@ import Contact from './Contact';
 import FeaturedVideo from './FeaturedVideo';
 import Live from './Live';
 
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-
 // Covers
 import IllAtEase from '../../assets/records/ill-at-ease-front.webp';
 import IllAtEase2 from '../../assets/records/ill-at-ease-back.webp';
@@ -20,7 +18,6 @@ const Home = () => {
 
   return (
     <div className='home-container'>
-      <LoadingSpinner asOverlay />
       <Slider slides={images} />
       <FeaturedVideo />
       <Live />
