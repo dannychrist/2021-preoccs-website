@@ -28,7 +28,7 @@ const ModalOverlay = ({ onCancel }) => {
       </header>
 
       <div className='modal__content'>
-        <h3>CURRENT</h3>
+        <h3>NEW</h3>
         <ul>
           <li>
             <a
@@ -41,7 +41,7 @@ const ModalOverlay = ({ onCancel }) => {
           </li>
         </ul>
 
-        <h3>PAST</h3>
+        <h3>OLD</h3>
         <ul>
           <li>
             <a
