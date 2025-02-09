@@ -1,13 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-window.onload = function () {
-  const rootElement = document.getElementById('root');
-  if (rootElement) {
-    ReactDOM.render(<App />, rootElement);
-  } else {
-    console.error('❌ Error: #root is missing in the DOM.');
-  }
-};
+const rootElement = document.getElementById('root');
+
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  console.error('❌ Error: #root is missing in the DOM.');
+}

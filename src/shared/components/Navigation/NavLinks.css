@@ -25,7 +25,6 @@
   text-align: center;
 }
 
-/* ✅ Standard styling for links */
 .nav-links a {
   color: var(--clr-accent);
   text-transform: uppercase;
@@ -34,44 +33,28 @@
   display: inline-block;
   padding: 12px 15px;
   position: relative;
-  font-size: inherit;
-  font-family: inherit;
-}
-
-/* ✅ Make the button match links exactly */
-.nav-links button {
-  all: unset; /* ✅ Resets all button styles */
-  color: var(--clr-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.19em;
-  display: inline-block;
-  padding: 12px 15px;
-  position: relative;
-  font-size: inherit;
-  font-family: inherit;
+  background: none;
+  border: none;
   cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-/* Active & Focus States */
 .nav-links a:active,
-.nav-links a:focus,
-.nav-links button:active,
-.nav-links button:focus {
+.nav-links a:focus {
   outline: 0;
   border: none;
   color: var(--clr-medium);
 }
 
-.nav-links a:hover,
-.nav-links button:hover {
+.nav-links a:hover {
   color: var(--clr-medium);
 }
 
 /* ✅ Ensure both <a> and <button> get the underline effect */
-.nav-links a::after,
-.nav-links button::after {
+.nav-links a::after {
   background: none repeat scroll 0 0 transparent;
-  bottom: 0; /* ✅ Forces all elements to match */
+  bottom: 0;
   content: '';
   display: block;
   height: 3px;
@@ -82,13 +65,11 @@
   width: 0;
 }
 
-.nav-links a:hover::after,
-.nav-links button:hover::after {
+.nav-links a:hover::after {
   width: 100%;
   left: 0;
 }
 
-/* ✅ Media Queries */
 @media (min-width: 1000px) {
   .nav-links ul {
     margin-top: 40px;

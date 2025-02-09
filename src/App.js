@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -6,43 +6,45 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-// Components
-import MainNavigation from './shared/components/Navigation/MainNavigation';
-import Home from './pages/components/Home';
-import Live from './pages/components/Live';
-import Videos from './pages/components/Videos';
-import Footer from './shared/components/Navigation/Footer';
-import NotFound from './pages/components/NotFound';
-
+import LoadingSpinner from './shared/components/UIElements/LoadingSpinner';
 import './App.css';
 
-// ✅ Fix: Scroll to Top without withRouter
-const ScrollToTop = ({ children }) => {
-  const { pathname } = useLocation();
+// Lazy-loaded Components
+const MainNavigation = lazy(() =>
+  import('./shared/components/Navigation/MainNavigation')
+);
+const Home = lazy(() => import('./pages/components/Home'));
+const Live = lazy(() => import('./pages/components/Live'));
+const Videos = lazy(() => import('./pages/components/Videos'));
+const Footer = lazy(() => import('./shared/components/Navigation/Footer'));
+const NotFound = lazy(() => import('./pages/components/NotFound'));
 
+// ✅ Scroll to Top when navigating pages
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return children;
+  return null; // Nothing to render, just a side effect
 };
 
 const App = () => {
   return (
-    <Router>
-      <ScrollToTop>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Suspense fallback={<LoadingSpinner />}>
         <MainNavigation />
+        <ScrollToTop />
         <div className='main-content'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/video' element={<Videos />} />
             <Route path='/live' element={<Live />} />
-            {/* ✅ Corrected 404 route for v6 */}
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
-      </ScrollToTop>
+      </Suspense>
     </Router>
   );
 };

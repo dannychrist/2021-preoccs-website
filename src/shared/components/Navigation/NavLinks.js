@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import './NavLinks.css';
 
@@ -9,7 +9,7 @@ const NavLinks = ({ onClose, openShopModal }) => {
       {/* NAVIGATION LINKS */}
       <ul className='nav-links'>
         <li>
-          <NavLink to='/' exact onClick={onClose}>
+          <NavLink to='/' onClick={onClose}>
             HOME
           </NavLink>
         </li>
@@ -24,10 +24,16 @@ const NavLinks = ({ onClose, openShopModal }) => {
           </NavLink>
         </li>
         <li>
-          {/* ✅ Open modal when clicking SHOP */}
-          <button className='nav-link-btn' onClick={openShopModal}>
+          {/* ✅ Use <Link> and prevent navigation */}
+          <Link
+            to='#'
+            onClick={(e) => {
+              e.preventDefault(); // Prevent actual navigation
+              openShopModal(); // Open modal function
+            }}
+          >
             SHOP
-          </button>
+          </Link>
         </li>
         <li>
           <a
