@@ -1,0 +1,60 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures full viewport height */
+  text-align: center;
+  padding: 2rem;
+}
+
+.not-found h1 {
+  font-size: 2.5rem;
+  color: var(--clr-medium);
+  margin-bottom: 1rem;
+}
+
+.not-found p {
+  font-size: 1.2rem;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+/* 404 Page Link */
+.not-found a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: var(--clr-light);
+  font-weight: bold;
+  border-bottom: 2px solid var(--clr-light);
+  transition: all 0.3s ease-in-out;
+}
+
+.not-found a:hover {
+  color: var(--clr-medium);
+  border-color: var(--clr-medium);
+}
+
+/* 🦖 404 Dinosaur Image */
+.not-found img {
+  width: 120px; /* Adjust as needed */
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)); /* Adds subtle shadow */
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .not-found h1 {
+    font-size: 2rem;
+  }
+
+  .not-found p {
+    font-size: 1rem;
+  }
+
+  .not-found img {
+    width: 100px;
+  }
+}

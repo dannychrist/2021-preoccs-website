@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
+  Routes,
   useLocation,
-  withRouter,
 } from 'react-router-dom';
 
 // Components
@@ -14,41 +12,38 @@ import Home from './pages/components/Home';
 import Live from './pages/components/Live';
 import Videos from './pages/components/Videos';
 import Footer from './shared/components/Navigation/Footer';
+import NotFound from './pages/components/NotFound';
 
 import './App.css';
 
-function _ScrollToTop(props) {
+// ✅ Fix: Scroll to Top without withRouter
+const ScrollToTop = ({ children }) => {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  return props.children;
-}
-const ScrollToTop = withRouter(_ScrollToTop);
+
+  return children;
+};
 
 const App = () => {
   return (
-    <>
-      <Router>
-        <ScrollToTop>
-          <MainNavigation />
-          <div className='main-content'>
-            <Switch>
-              <Route path='/' exact>
-                <Home />
-              </Route>
-              <Route path='/video'>
-                <Videos />
-              </Route>
-              <Route path='/live'>
-                <Live />
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
-        </ScrollToTop>
-      </Router>
-    </>
+    <Router>
+      <ScrollToTop>
+        <MainNavigation />
+        <div className='main-content'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/video' element={<Videos />} />
+            <Route path='/live' element={<Live />} />
+            {/* ✅ Corrected 404 route for v6 */}
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </ScrollToTop>
+    </Router>
   );
 };
 
