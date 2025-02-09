@@ -26,6 +26,8 @@
 .seated-follow-text {
   margin: 15px;
   color: white;
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
 }
 
 .seated-events-table {
@@ -41,6 +43,13 @@
   /* margin: 0 !important; */
   background: transparent !important;
   color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.seated-follow-link {
+  border-radius: 25px;
+  background: red;
 }
 
 @media (max-width: 500px) {
