@@ -42,6 +42,7 @@ const Video = ({ title, link, screenshot, onLoad }) => {
         style={{
           margin: '1%',
           background: 'black',
+          borderRadius: '0px',
         }}
       >
         <CardContent

@@ -1,6 +1,6 @@
 .video-button {
   background: none !important;
-  border: none;
+  border: none !important;
   padding: 0 !important;
   position: relative;
   width: 100%;
