@@ -103,18 +103,18 @@ const Wrapper = styled.div`
 
 // **Keyframe Animations for Fading and Blurring**
 const fadeIn = keyframes`
-  0% { opacity: 0; -webkit-filter: blur(5px); filter: blur(5px); }
-  100% { opacity: 1; -webkit-filter: blur(0px); filter: blur(0px); }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 `;
 
 const fadeOut = keyframes`
-  0% { opacity: 1; -webkit-filter: blur(0px); filter: blur(0px); }
-  100% { opacity: 0; -webkit-filter: blur(5px); filter: blur(5px); }
+  0% { opacity: 1; }
+  100% { opacity: 0;}
 `;
 
 const swellBlurIn = keyframes`
-  0% { opacity: 0; transform: scale(0.8); -webkit-filter: blur(5px); filter: blur(5px); }
-  100% { opacity: 1; transform: scale(1); -webkit-filter: blur(0px); filter: blur(0px); }
+  0% { opacity: 0; transform: scale(0.8);}
+  100% { opacity: 1; transform: scale(1);}
   
 `;
 
