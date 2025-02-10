@@ -2,19 +2,15 @@
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
           dl = l !== 'dataLayer' ? '&l=' + l : '';
-
         j.async = true;
         j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-
         f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-366VF9N');
     </script>
@@ -25,7 +21,22 @@
     <link rel="icon" type="image/x-icon" href="/proccs_icon.ico" />
     <link rel="canonical" href="https://preoccs.com/" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Optimized FontAwesome Loading -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <script
+      defer
       src="https://kit.fontawesome.com/8f966dc251.js"
       crossorigin="anonymous"
     ></script>
@@ -49,7 +60,6 @@
       name="keywords"
       content="Preoccupations, post-punk band, Canadian music, indie rock, new wave, alternative rock, tour dates, latest album"
     />
-
     <meta
       name="description"
       content="Official website of Preoccupations, a post-punk band from Canada. Listen to a preview of Ill at Ease, check tour dates, and explore the latest news."
@@ -67,14 +77,14 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
+    <noscript>
+      <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-366VF9N"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+      ></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="backdrop-hook"></div>

@@ -116,6 +116,7 @@ const fadeOut = keyframes`
 const swellBlurIn = keyframes`
   0% { opacity: 0; transform: scale(0.8); -webkit-filter: blur(10px); filter: blur(10px); }
   100% { opacity: 1; transform: scale(1); -webkit-filter: blur(0px); filter: blur(0px); }
+  
 `;
 
 // **Image Container for Fading Slides**
