@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react';
 import { css, jsx } from '@emotion/core';
 
 const Slide = ({ content, width }) => (
@@ -14,4 +15,4 @@ const Slide = ({ content, width }) => (
   />
 );
 
-export default Slide;
+export default React.memo(Slide);
