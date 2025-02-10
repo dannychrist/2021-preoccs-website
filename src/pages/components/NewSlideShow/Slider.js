@@ -191,7 +191,7 @@ const PreSaveContainer = styled.div`
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 0;
-  animation: ${fadeIn} 5s ease-out 7s forwards;
+  animation: ${fadeIn} 5s ease-out 5s forwards;
 `;
 
 // **Subtle Small Text Above Button**
