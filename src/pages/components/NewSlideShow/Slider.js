@@ -8,7 +8,7 @@ import Slide from './Slide';
 import PreoccsHome from '../../../assets/home/preoccs-home-removebg-preview.webp';
 import IllAtEaseHome from '../../../assets/home/ill-at-ease-home-removebg-preview.webp';
 
-const Slider = ({ slides, autoPlay = 5 }) => {
+const Slider = ({ slides, autoPlay = 3 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [prevSlide, setPrevSlide] = useState(slides.length - 1);
   const [isFading, setIsFading] = useState(true);
@@ -31,7 +31,7 @@ const Slider = ({ slides, autoPlay = 5 }) => {
 
     timeoutRef.current = setTimeout(() => {
       transitionSlides();
-    }, autoPlay * 1000 + 5000); // Ensuring smooth transitions
+    }, autoPlay * 1000 + 3000); // Ensuring smooth transitions
 
     return () => clearTimeout(timeoutRef.current);
   }, [autoPlay, transitionSlides]);
@@ -74,7 +74,6 @@ const Slider = ({ slides, autoPlay = 5 }) => {
           src={IllAtEaseHome}
           alt='Ill At Ease Home'
           className='melt-in'
-          fetchpriority='high'
         />
 
         {/* Pre-Save Section */}
@@ -104,17 +103,17 @@ const Wrapper = styled.div`
 
 // **Keyframe Animations for Fading and Blurring**
 const fadeIn = keyframes`
-  0% { opacity: 0; -webkit-filter: blur(10px); filter: blur(10px); }
+  0% { opacity: 0; -webkit-filter: blur(5px); filter: blur(5px); }
   100% { opacity: 1; -webkit-filter: blur(0px); filter: blur(0px); }
 `;
 
 const fadeOut = keyframes`
   0% { opacity: 1; -webkit-filter: blur(0px); filter: blur(0px); }
-  100% { opacity: 0; -webkit-filter: blur(10px); filter: blur(10px); }
+  100% { opacity: 0; -webkit-filter: blur(5px); filter: blur(5px); }
 `;
 
 const swellBlurIn = keyframes`
-  0% { opacity: 0; transform: scale(0.8); -webkit-filter: blur(10px); filter: blur(10px); }
+  0% { opacity: 0; transform: scale(0.8); -webkit-filter: blur(5px); filter: blur(5px); }
   100% { opacity: 1; transform: scale(1); -webkit-filter: blur(0px); filter: blur(0px); }
   
 `;
@@ -126,12 +125,12 @@ const ImageContainer = styled.div`
   height: 100%;
 
   &.fadeIn {
-    animation: ${fadeIn} 5s ease-in-out forwards;
+    animation: ${fadeIn} 3s ease-in-out forwards;
     opacity: 1;
   }
 
   &.fadeOut {
-    animation: ${fadeOut} 5s ease-in-out forwards;
+    animation: ${fadeOut} 3s ease-in-out forwards;
     opacity: 0;
   }
 `;
@@ -149,13 +148,13 @@ const MeltImage = styled.img`
   &.melt-in:first-of-type {
     bottom: 15%;
     left: 10%;
-    animation: ${swellBlurIn} 5s ease-out 1s forwards;
+    animation: ${swellBlurIn} 3s ease-out 1s forwards;
   }
 
   &.melt-in:last-of-type {
     top: 10%;
     right: 10%;
-    animation: ${swellBlurIn} 5s ease-out 4s forwards;
+    animation: ${swellBlurIn} 3s ease-out 3s forwards;
   }
 
   /* 🖥️ Adjusted for small desktops/laptops */
@@ -191,7 +190,7 @@ const PreSaveContainer = styled.div`
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 0;
-  animation: ${fadeIn} 5s ease-out 5s forwards;
+  animation: ${fadeIn} 3s ease-out 4s forwards;
 `;
 
 // **Subtle Small Text Above Button**
