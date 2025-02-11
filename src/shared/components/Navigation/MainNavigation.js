@@ -71,7 +71,16 @@ const MainNavigation = () => {
         </button>
         <h1 className='main-navigation__title'>
           <Link to='/'>
-            <img src={NewPreoccs} width={250} height={43.24} alt='logo' />
+            <img
+              src={NewPreoccs}
+              width={250}
+              height={43.24}
+              alt='logo'
+              style={{ maxWidth: '100%', height: 'auto' }}
+              fetchpriority='high' /* ✅ Forces high priority */
+              loading='eager' /* ✅ Loads ASAP */
+              decoding='async' /* ✅ Speeds up decoding */
+            />
           </Link>
         </h1>
         <nav className='main-navigation__header-nav'>
