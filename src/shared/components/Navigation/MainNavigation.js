@@ -71,7 +71,7 @@ const MainNavigation = () => {
         </button>
         <h1 className='main-navigation__title'>
           <Link to='/'>
-            <img src={NewPreoccs} width={250} alt='logo' />
+            <img src={NewPreoccs} width={250} height={43.24} alt='logo' />
           </Link>
         </h1>
         <nav className='main-navigation__header-nav'>
