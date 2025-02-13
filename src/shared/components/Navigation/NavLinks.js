@@ -37,7 +37,9 @@ const NavLinks = ({ onClose, openShopModal }) => {
         </li>
         <li>
           <a
-            href='https://preoccupations.us17.list-manage.com/subscribe?u=111ab42f11672c8db4328f3e7&id=6d6483a833'
+            href='https://preoccs.substack.com/subscribe'
+            target='_blank'
+            rel='noopener noreferrer'
             onClick={onClose}
           >
             NEWSLETTER
