@@ -2,10 +2,10 @@ import React from 'react';
 import './Contact.css';
 
 const contacts = [
-  { label: 'NA BOOKING', email: 'bettsmarshallk@gmail.com' },
+  { label: 'NA BOOKING', email: 'mbetts@tbaagency.com' },
   { label: 'EURO/UK BOOKING', email: 'Bas@belmontbookings.nl' },
   { label: 'BAND CONTACT', email: 'Preoccupationsband@gmail.com' },
-  { label: 'PR', email: 'Gracej@grandstandhq.com' },
+  { label: 'PR', email: 'grace@theoriel.co' },
 ];
 
 const Contact = () => {
