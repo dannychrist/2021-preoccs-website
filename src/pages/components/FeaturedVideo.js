@@ -21,7 +21,7 @@ const FeaturedVideo = (props) => {
       <div className='featured-video'>
         <iframe
           className='f-vid'
-          src='https://www.youtube-nocookie.com/embed/npLTTvKpxPU?si=CANALUDNfDihzBRD'
+          src='https://www.youtube-nocookie.com/embed/4RK_59EkZqE?start=2'
           title='featured-video'
           alt='featured-video'
           style={{ border: 'none' }}
