@@ -80,11 +80,11 @@ const Slider = ({ slides, autoPlay = 3 }) => {
         <PreSaveContainer>
           <SmallText>NEW SINGLE / RECORD</SmallText>
           <PreSaveButton
-            href='https://orcd.co/preoccsbastards'
+            href='https://orcd.co/illatease'
             target='_blank'
             rel='noopener noreferrer'
           >
-            Stream "Bastards" / Preorder Vinyl
+            Stream "Ill at Ease" / Preorder Vinyl
           </PreSaveButton>
         </PreSaveContainer>
       </Wrapper>
